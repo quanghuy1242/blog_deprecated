@@ -1,145 +1,38 @@
 * {
     padding: 0;
     margin: 0;
-    
 }
-#outer {
-    margin: 0 auto;
-    background-image: url(background.jpg);
-    width: 1100px;
-    height: 650px;
-    padding-top: 50px;
-}
-#head {
-    width: 200px;
-    float: left;
-    display: block;
-}
-nav {
-    width: 200px;
-    height: 246px;
-}
-nav ul li {
-    height: 40px;
-    text-align: right;
-    padding-right: 10px;
-    border-bottom: 1px dashed #3c9;
-    line-height: 40px;
-    background-color: #def2f5;
-}
-a{
-    text-decoration: none;
-}
-nav ul li a {
-    color: black;
-}
-nav ul li:hover a{
-    color: tomato;
-}
-ul {
-    margin-top: 50px;
-    list-style: none;
-    box-shadow: 0 0 8px #0000001a;
-}
-section {
-    margin-top: 120px;
-    padding: 0 20px 0 20px;
-    display: block;
-    width: 610px;
-    float: left;
-    height: 450px;
-    column-count: 2;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: tomato;
-}
-section h1 {
-    column-span: all;
-    font-size: 45px;
-    color: #7e7e7e;
-}
-aside {
-    width: 250px;
-    float: left;
-    height: 600px;
-}
-footer {
-    width: 1100px;
-    height: 50px;
-    float: left;
+.header {
+    /* background-color: aqua; */
     text-align: center;
-    line-height: 50px;
+    height: 100px;
+    margin:20px 0 -10px 0;
 }
-input[type=text],input[type=mail],input[type=date]{
-    outline: none;
-    border: 1px dashed #3c9;
-    width: 150px;
-}
-textarea{
-    outline: none;
-    border: 1px dashed #3c9;
-    margin-top: 3px;
-}
-input[type=button]{
-    background-color: #5387e9;
-    padding: 2px;
-    border-radius: 10px;
-    border: 0px;
-    padding: 1px 5px 2px 5px;
-    outline: none;
-    cursor: pointer;
-}
-#a2 {
-    margin-top: 100px;
-    border-radius: 5%;
-    box-shadow: 0 0 8px #0000001a;
-    padding: 10px;
-    width: 190px;
-    height: 200px;
-    background-color: #def2f5;
-}
-#a3{
-    margin-top: 30px;
-    width: 200px;
-}
-#otron {
-    padding: 5px;
-    height: 83px;
-    width: 83px;
-    border-radius: 50%;
-    background-color: #def2f5;
-    margin-bottom: 10px;
-    box-shadow: 0 0 8px 2px #0000001a;
-    float: left;
-    margin-right: 10px;
-}
-#oo{
-    border: 1px dashed red;
-    width: 80px;
-    height: 60px;
-    background-color: #def2f5;
-    display: block;
-    border-radius: 50%;
-    text-align: center;
-    padding-top: 20px;
-}
-.aaa{
-    width: 100px;
-    color: black !important;
-}
-#sec2{
-    margin-top: 120px;
-    padding: 0 20px 0 20px;
-    display: block;
-    width: 610px;
-    float: left;
+.section {
+    /* background-color: aquamarine; */
     height: auto;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: tomato;
 }
-#sec2 h1 {
-    font-size: 45px;
-    color: #7e7e7e;
+.aside {
+    /* background-color: brown; */
+    height: auto;
 }
-textarea{
-    scroll-behavior: smooth;
+.footer {
+    /* background-color: cadetblue; */
+    height: 50px;
+    text-align: center;
+    margin: 10px 0px 10px 0px;
+}
+.navbar .navbar-nav {
+    display: inline-block;
+    float: none;
+    /* background-color: white; */
+}
+/* Canh giữa */
+.navbar .navbar-collapse {
+    text-align: center;
+    /* background-color: white; */
+}
+.Tieude {
+    font-size: 20px;
+    font-weight: bold;
 }
