@@ -1,38 +1,76 @@
-* {
-    padding: 0;
-    margin: 0;
-}
 .header {
-    /* background-color: aqua; */
-    text-align: center;
-    height: 100px;
-    margin:20px 0 -10px 0;
-}
-.section {
+    padding: 30px 0px 30px 0px;
     /* background-color: aquamarine; */
-    height: auto;
+    /* line-height: 80px; */
+    /* height: 80px; */
+    text-align: center;
+}
+.header h1 {
+    font-weight: 350;
+    line-height: 0.5;
+}
+ul.navbar-nav li {
+    text-align: center;
+}
+.nav .navbar-nav {
+    display: inline-block !important;
+    float: none !important;
 }
 .aside {
-    /* background-color: brown; */
-    height: auto;
+    margin-top: 15px;
+}
+.section .card {
+    margin-top: 15px;
+}
+.section .card .card-header {
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 30px;
+}
+.card-header small {
+    font-size: 15px;
+    color: grey;
+}
+#accordion .card-body {
+    padding: 0px !important;
+}
+#accordion .list-group-item {
+    padding-bottom: 5px !important;
+    padding-top: 5px !important;
+}
+#accordion .card-header {
+    padding-bottom: 5px !important;
+    padding-top: 5px !important;
+    /* background-color: #fff !important; */
+}
+#accordion .card-link {
+    display: block;
+    color: black;
+    font-weight: 400;
+}
+
+/* a2 */
+
+#accordion2 .card-body {
+    padding: 0px !important;
+}
+#accordion2 .list-group-item {
+    padding-bottom: 5px !important;
+    padding-top: 5px !important;
+}
+#accordion2 .card-header {
+    padding-bottom: 5px !important;
+    padding-top: 5px !important;
+    /* background-color: #fff !important; */
+}
+#accordion2 .card-link {
+    display: block;
+    color: black;
+    font-weight: 400;
 }
 .footer {
-    /* background-color: cadetblue; */
-    height: 50px;
     text-align: center;
-    margin: 10px 0px 10px 0px;
-}
-.navbar .navbar-nav {
-    display: inline-block;
-    float: none;
-    /* background-color: white; */
-}
-/* Canh giữa */
-.navbar .navbar-collapse {
-    text-align: center;
-    /* background-color: white; */
-}
-.Tieude {
-    font-size: 20px;
-    font-weight: bold;
+    background-color: #d4d4d4;
+    padding: 15px 0 15px 0;
+    font-weight: 500;
 }
