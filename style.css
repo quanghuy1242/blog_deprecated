@@ -74,3 +74,11 @@ ul.navbar-nav li {
     padding: 15px 0 15px 0;
     font-weight: 500;
 }
+#dh {
+    display: none;
+}
+@media screen and (max-width: 767px) {
+    #dh {
+        display: inline-block;
+    }
+}
