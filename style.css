@@ -1,84 +1,15 @@
-.header {
-    padding: 30px 0px 30px 0px;
-    /* background-color: aquamarine; */
-    /* line-height: 80px; */
-    /* height: 80px; */
-    text-align: center;
+* {
+    
 }
-.header h1 {
-    font-weight: 350;
-    line-height: 0.5;
+.dropdown-item:hover {
+    color: white!important;
+    background-color: #398791!important;
 }
-ul.navbar-nav li {
-    text-align: center;
-}
-.nav .navbar-nav {
-    display: inline-block !important;
-    float: none !important;
-}
-.aside {
-    margin-top: 15px;
-}
-.section .card {
-    margin-top: 15px;
-}
-.section .card .card-header {
-    font-size: 25px;
-    font-weight: 500;
-    line-height: 30px;
-}
-.card-header small {
-    font-size: 15px;
-    color: grey;
-}
-#accordion .card-body {
-    padding: 0px !important;
-}
-#accordion .list-group-item {
-    padding-bottom: 5px !important;
-    padding-top: 5px !important;
-}
-#accordion .card-header {
-    padding-bottom: 5px !important;
-    padding-top: 5px !important;
-    /* background-color: #fff !important; */
-}
-#accordion .card-link {
-    display: block;
-    color: black;
-    font-weight: 400;
-}
-
-/* a2 */
-
-#accordion2 .card-body {
-    padding: 0px !important;
-}
-#accordion2 .list-group-item {
-    padding-bottom: 5px !important;
-    padding-top: 5px !important;
-}
-#accordion2 .card-header {
-    padding-bottom: 5px !important;
-    padding-top: 5px !important;
-    /* background-color: #fff !important; */
-}
-#accordion2 .card-link {
-    display: block;
-    color: black;
-    font-weight: 400;
-}
-.footer {
-    text-align: center;
-    background-color: #d4d4d4;
-    padding: 15px 0 15px 0;
-    font-weight: 500;
-}
-#dh {
-    display: none;
-}
-@media screen and (max-width: 767px) {
-    #dh {
-        display: inline-block;
-    }
+#logo {
+    background-color: #fff;
+    color: #398791;
+    padding: 5px 5px 7px 5px;
+    border-radius: 8px;
+    line-height: 1px;
+    font-weight: bold;
 }
