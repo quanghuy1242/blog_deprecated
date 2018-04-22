@@ -13,3 +13,42 @@
     line-height: 1px;
     font-weight: bold;
 }
+.baiviet .card {
+    border-radius: 0px!important;
+    border-color:#cae6e1!important;
+    margin-bottom: 15px;
+}
+.baiviet .card-header {
+    border-radius: 0px!important;
+    background-color: #cae6e1;
+    border-color:#cae6e1!important;
+    color: rgb(82, 82, 82);
+}
+.btn-custom {
+    /* border: 1px solid #398791!important; */
+    border-radius: 0px!important;
+    color: #398791;
+    margin-top: -5px;
+    padding: 2px 7px 2px 7px!important;
+    /* font-size: small!important; */
+    background-color: #fff;
+    box-shadow: none!important;
+}
+.btn-custom:hover {
+    color: white!important;
+    background-color: #398791;
+}
+.list-group-item {
+    border-radius: 0px!important;
+    border: 0px!important   ;
+    padding: 3px 7px 3px 7px!important;
+    /* font-size: small; */
+}
+.nav-item {
+    border-radius: 0px !important;
+    /* background-color: #398791; */
+    color: black;
+}
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    background-color: #398791!important;
+}
