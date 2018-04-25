@@ -1,54 +1,145 @@
 * {
-    
+    /* font-family: Roboto; */
+    transition: 0.2s;
 }
-.dropdown-item:hover {
+@font-face {
+    font-family: 'Font1';
+    src: url(FtraMd__.ttf) format('truetype');
+}
+@font-face {
+    font-family: 'Font2';
+    src: url(FtraHv__.ttf) format('woff2');
+}
+@font-face {
+    font-family: 'Font3';
+    src: url(FtraBd__.ttf) format('woff2');
+}
+@import url('https://fonts.googleapis.com/css?family=Mitr');
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+@import url('https://fonts.googleapis.com/css?family=Homemade+Apple');
+@import url('https://fonts.googleapis.com/css?family=Rock+Salt');
+@import url('https://fonts.googleapis.com/css?family=EB+Garamond');
+@import url('https://fonts.googleapis.com/css?family=Barlow+Condensed');
+a.nav-link {
+    line-height: 0.25;
     color: white!important;
-    background-color: #398791!important;
 }
-#logo {
-    background-color: #fff;
-    color: #398791;
-    padding: 5px 5px 7px 5px;
-    border-radius: 8px;
-    line-height: 1px;
-    font-weight: bold;
+#navfont {
+    font-family: 'Font2';
+    /* font-family: 'Mitr', sans-serif; */
+    padding: 0px!important;
+    /* padding-top: 0px;
+    padding-bottom: 0px; */
+    /* font-weight: 700; */
 }
-.baiviet .card {
-    border-radius: 0px!important;
-    border-color:#cae6e1!important;
-    margin-bottom: 15px;
+#home:hover {
+    background-color: #416275;
 }
-.baiviet .card-header {
-    border-radius: 0px!important;
-    background-color: #cae6e1;
-    border-color:#cae6e1!important;
-    color: rgb(82, 82, 82);
-}
-.btn-custom {
-    /* border: 1px solid #398791!important; */
-    border-radius: 0px!important;
-    color: #398791;
-    margin-top: -5px;
-    padding: 2px 7px 2px 7px!important;
-    /* font-size: small!important; */
-    background-color: #fff;
-    box-shadow: none!important;
-}
-.btn-custom:hover {
-    color: white!important;
-    background-color: #398791;
-}
-.list-group-item {
-    border-radius: 0px!important;
-    border: 0px!important   ;
-    padding: 3px 7px 3px 7px!important;
-    /* font-size: small; */
+#home {
+    line-height: 1.5!important;
+    /* padding: 15px; */
+    font-family: 'Font3';
+    padding-left: 1px;
+    padding-right: 1px;
+    font-size: 16px!important;
 }
 .nav-item {
-    border-radius: 0px !important;
-    /* background-color: #398791; */
+    padding: 7px;
+}
+.right .nav-item {
+    font-size: 15px;
+}
+.right .nav-link {
+    color: #F3F1E9!important;
+}
+#fb:hover {
+    background-color: #3b5998;
+    display: block;
+}
+#ig:hover {
+    background-color: #e4405f;
+    display: block;
+}
+#tw:hover {
+    background-color: #55acee;
+    display: block;
+}
+#wp:hover {
+    background-color: #21759b;
+    display: block;
+}
+#dhh:hover {
+    background-color: #7e7e7e;
+    display: block;
+}
+.bvm {
+    font-family: 'Font3';
+    /* white-space: pre-line; */
+    letter-spacing: 1px;
+    border-bottom: 2px dotted;
+    /* width: 100%; */
+    display: block;
+    padding-bottom: 5px;
+    color: #416275;
+}
+
+#logo {
+    color: #F3F1E9;
+    height: 250px;
+    text-align: center;
+    /* margin-top: auto!important;
+    margin-bottom: auto!important; */
+}
+.title {
+    font-family: 'EB Garamond', serif;
+    font-weight: bolder;
+    font-size: 80px;
+    line-height: 0.8;
+}
+#ccc {
+    font-family: 'Font2';
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px dotted;
+}
+.card {
+    border: none!important;
+}
+.chia {
+    font-family: 'Font3';
+    letter-spacing: 1px;
+    border-bottom: 2px dotted;
+    display: block;
+    padding-bottom: 5px;
+    color: #416275;
+}
+.tde {
+    margin-top: 30px;
+    font-family: 'Font3';
+    letter-spacing: 1px;
+    display: block;
+    padding-bottom: 5px;
+    color: #416275;
+    text-transform: uppercase;
+}
+.ndung {
+    font-family: 'EB Garamond', serif;
+    font-weight: 500;
     color: black;
 }
-.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
-    background-color: #398791!important;
+.nt {
+    color: gray;
+}
+ul {
+    list-style: none;
+    padding-left: 15px;
+}
+a.subtext {
+    font-family: 'Font3';
+    color: #416275;
+    font-size: smaller;
+}
+a:hover {
+    text-decoration: none!important;
+    color: #21759b;
 }
