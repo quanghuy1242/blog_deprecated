@@ -20,6 +20,7 @@
 @import url('https://fonts.googleapis.com/css?family=Rock+Salt');
 @import url('https://fonts.googleapis.com/css?family=EB+Garamond');
 @import url('https://fonts.googleapis.com/css?family=Barlow+Condensed');
+
 a.nav-link {
     line-height: 0.25;
     color: white!important;
@@ -42,6 +43,7 @@ a.nav-link {
     padding-left: 1px;
     padding-right: 1px;
     font-size: 16px!important;
+    background-color: #416275;
 }
 .nav-item {
     padding: 7px;
