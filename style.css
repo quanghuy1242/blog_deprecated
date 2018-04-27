@@ -8,15 +8,15 @@
 }
 @font-face {
     font-family: 'Font2';
-    src: url(JosefinSans-Regular.ttf) format('truetype');
+    src: url(Oswald-Medium.ttf) format('truetype');
 }
 @font-face {
     font-family: 'Font3';
-    src: url(JosefinSans-SemiBold.ttf) format('truetype');
+    src: url(Oswald-SemiBold.ttf) format('truetype');
 }
 @font-face {
     font-family: 'Font4';
-    src: url(JosefinSans-Bold.ttf) format('truetype');
+    src: url(Oswald-Medium.ttf) format('truetype');
 }
 @import url('https://fonts.googleapis.com/css?family=Mitr');
 @import url('https://fonts.googleapis.com/css?family=Pacifico');
@@ -82,7 +82,7 @@ a.nav-link {
     display: block;
 }
 .bvm {
-    font-family: 'Font4';
+    font-family: 'Font3';
     /* white-space: pre-line; */
     letter-spacing: 1px;
     border-bottom: 2px dotted;
@@ -94,23 +94,46 @@ a.nav-link {
 
 #logo {
     color: #F3F1E9;
-    height: 250px;
+    height: 300px;
     text-align: center;
+    padding-top: 50px;
+    background-color: #416275
     /* margin-top: auto!important;
     margin-bottom: auto!important; */
 }
 .title {
     font-family: 'EB Garamond', serif;
-    font-weight: bolder;
+    font-weight: bold;
     font-size: 80px;
     line-height: 0.8;
+    transition: all 0.4s;
+    /* -webkit-text-stroke: 1px white; */
+    /* animation: fade 0.5s; */
+    /* text-shadow: 0px 0px #416275; */
+    /* background-clip: padding-box; */
+    
+}
+.title:hover {
+    /* font-size: 79px; */
+    /* animation: dm 0.5s; */
+    /* -webkit-text-stroke: 1px white; */
+    text-shadow:
+    -1px -1px 0 white,
+    1px -1px 0 white,
+    -1px 1px 0 white,
+    1px 1px 0 white;
+    /* -webkit-text-fill-color: #416275; */
+    color: #416275;
+    /* transition: all 0.5s !important; */
+    /* text-shadow: 0px 0px white; */
 }
 .title::after {
     content: 'Quang \A Huy';
+    /* content: "a"; */
     white-space:pre;
 }
 #ccc {
-    transition: 1s!important;
+    /* transition: border-bottom 1s!important; */
     font-family: 'Font4';
     text-transform: uppercase;
     /* letter-spacing: 1px; */
@@ -118,8 +141,9 @@ a.nav-link {
 }
 #ccc:hover {
     /* animation: fadeIn 0.2s; */
-    transition: 1s!important;
+    /* transition: border-bottom 1s!important; */
     border-bottom: 1px solid;
+    /* color: #e4405f; */
 }
 .card {
     border: none!important;
@@ -134,7 +158,7 @@ a.nav-link {
 }
 .tde {
     margin-top: 30px;
-    font-family: 'Font4';
+    font-family: 'Font3';
     letter-spacing: 1px;
     display: block;
     padding-bottom: 5px;
@@ -170,6 +194,6 @@ a:hover {
     font-family: 'Font2';
     text-align: center;
     line-height: 50px;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     margin-top: 15px;
 }
