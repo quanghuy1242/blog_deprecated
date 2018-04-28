@@ -18,6 +18,10 @@
     font-family: 'Font4';
     src: url(Oswald-Medium.ttf) format('truetype');
 }
+@font-face {
+    font-family: 'logoo';
+    src: url(Adobe-Garamond-Pro-Semibold-Italic_2010.ttf) format('truetype');
+}
 @import url('https://fonts.googleapis.com/css?family=Mitr');
 @import url('https://fonts.googleapis.com/css?family=Pacifico');
 @import url('https://fonts.googleapis.com/css?family=Homemade+Apple');
@@ -81,6 +85,10 @@ a.nav-link {
     background-color: #7e7e7e;
     display: block;
 }
+#pj:hover {
+    background-color: #016129;
+    display: block;
+}
 .bvm {
     font-family: 'Font3';
     /* white-space: pre-line; */
@@ -103,9 +111,12 @@ a.nav-link {
 }
 .title {
     font-family: 'EB Garamond', serif;
+    /* font-family: "logoo"; */
     font-weight: bold;
     font-size: 80px;
     line-height: 0.8;
+    /* font-feature-settings: "swsh" 2; */
+    /* font-feature-settings: "ss02"; */
     transition: all 0.4s;
     /* -webkit-text-stroke: 1px white; */
     /* animation: fade 0.5s; */
@@ -128,7 +139,7 @@ a.nav-link {
     /* text-shadow: 0px 0px white; */
 }
 .title::after {
-    content: 'Quang \A Huy';
+    content: 'Quang \A \210B uy';
     /* content: "a"; */
     white-space:pre;
 }
@@ -196,4 +207,31 @@ a:hover {
     line-height: 50px;
     letter-spacing: 1px;
     margin-top: 15px;
+}
+.dropdown-menu {
+    border-radius: 0px!important;
+    background-color: #121F27!important;
+    top: 115%!important;
+    border: none!important;
+}
+.dropdown-item {
+    color: white!important;
+}
+.dropdown-item:hover {
+    color: #121F27!important;
+}
+.tips-p::after {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: #121F27;
+    transform: rotate(45deg);
+    top: -3%;
+    left: 24%;
+}
+@media screen and (max-width:767px){
+    .tips-p::after {
+        display: none;
+    }
 }
