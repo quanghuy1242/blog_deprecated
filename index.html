@@ -1,174 +1,205 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="bootstrap-4.1.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="bootstrap-4.1.0/css/bootstrap-grid.min.css">
-    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
-    <script src="bootstrap-4.1.0/js/jquery-3.3.1.min.js"></script>
-    <script src="popper.min.js"></script>
-    <script src="bootstrap-4.1.0/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="animate.min.css">
-    
-    <title>Quang Huy</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="bootstrap-4.1.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="bootstrap-4.1.0/css/bootstrap-grid.min.css">
+	<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+	<script src="bootstrap-4.1.0/js/jquery-3.3.1.min.js"></script>
+	<script src="popper.min.js"></script>
+	<script src="jquery-ui.js"></script>
+	<script src="bootstrap-4.1.0/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="animate.min.css">
+
+	<title>Quang Huy</title>
+	<script>
+		function clickshow() {
+			$( ".hideContent" ).switchClass( "hideContent", "showContent", 200 );
+			$( ".showContent" ).switchClass( "showContent", "hideContent", 200 );
+			if($("#showmorer").text()=="more"){
+				document.getElementById("showmorer").innerText = "less";
+			}
+			else {
+				document.getElementById("showmorer").innerText = "more";
+			}
+		}
+
+	</script>
 </head>
-<body>
-    <nav class="navbar navbar-expand-md navbar-dark sticky-top" style="background-color: #121F27;" id="navfont">
-        <!-- <a class="navbar-brand" href="#">Navbar</a> -->
-        <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
-            aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-        <div class="collapse navbar-collapse" id="collapsibleNavId">
-            <ul class="navbar-nav">
-                <li class="nav-item" id="home">
-                    <a class="nav-link active" href="#" >QUANG HUY</a>
-                </li>
-            </ul>
-            <ul class="nav navbar-nav ml-auto right">
-                <div class="dropdown">
-                    <li class="nav-item" id="pj">
-                        <a class="nav-link" href="#" data-toggle="dropdown">PROJECT</a>
-                        <div class="dropdown-menu tips-p">
-                            <a class="dropdown-item" href="#">Music</a>
-                            <a class="dropdown-item" href="#">Music Responsive</a>
-                            <a class="dropdown-item" href="#">ALTP_cmd</a>
-                            <a class="dropdown-item" href="#">Blog</a>
-                        </div>
-                    </li>
-                </div>
-                <li class="nav-item" id="dhhh">
-                    <a class="nav-link" href="#dh" >ĐIỀU HƯỚNG</a>
-                </li>
-                <li class="nav-item" id="fb">
-                    <a class="nav-link" href="#" >FACEBOOK</a>
-                </li>
-                <li class="nav-item" id="ig">
-                    <a class="nav-link" href="#" >INSTAGRAM</a>
-                </li>
-                <li class="nav-item" id="tw">
-                    <a class="nav-link" href="#" >TWITTER</a>
-                </li>
-                <li class="nav-item" id="wp">
-                    <a class="nav-link" href="#" >WORDPRESS</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-    <div id="logo">
-        <p style="line-height: 1;">
-            <i class="title"></i><br>
-        </p>
-        <div style="margin-top: 35px">
-            <span id="ccc">Lửa tắt, anh dõi theo những vì sao qua cửa sổ</span>
-        </div>
-    </div>
-    <div class="container">
-        <div class="row">
-                <div class="col-lg-5" id="dh" style="order: 1;margin-top: 25px;">
-                        <div>
-                            <span class="bvm">SẮP XẾP</span>
-                            <span class="bvm" style="margin-top: 20px;">CHỦ ĐỀ:</span>
-                            <ul>
-                                <li><a href="#cd1" class="subtext" data-toggle="collapse">Chủ đề 1</a></li>
-                                    <div id="cd1" class="collapse">
-                                        <ul>
-                                            <li><a href="#" class="subtext">123456 abcd</a></li>
-                                            <li><a href="#" class="subtext">123456 abcd</a></li>
-                                        </ul>
-                                    </div>
-                                <li><a href="#lm" class="subtext"  data-toggle="collapse">Lãng mạng</a></li>
-                                    <div id="lm" class="collapse">
-                                        <ul>
-                                            <li><a href="#" class="subtext">123456 abcd</a></li>
-                                            <li><a href="#" class="subtext">123456 abcd</a></li>
-                                        </ul>
-                                    </div>
-                                <li><a href="#hd" class="subtext"  data-toggle="collapse">Hành động</a></li>
-                                    <div id="hd" class="collapse">
-                                        <ul>
-                                            <li><a href="#" class="subtext">123456 abcd</a></li>
-                                            <li><a href="#" class="subtext">123456 abcd</a></li>
-                                        </ul>
-                                    </div>
-                                <li><a href="#tt" class="subtext"  data-toggle="collapse">Trinh Thám</a></li>
-                                    <div id="tt" class="collapse">
-                                        <ul>
-                                            <li><a href="#" class="subtext">123456 abcd</a></li>
-                                            <li><a href="#" class="subtext">123456 abcd</a></li>
-                                        </ul>
-                                    </div>
-                            </ul>
-            
-                            <span class="bvm" style="margin-top: 20px;">THÁNG:</span>
-                            <ul>
-                                <li><a href="#thang4" class="subtext" data-toggle="collapse">Tháng 4</a></li>
-                                    <div id="thang4" class="collapse">
-                                        <ul>
-                                            <li><a href="#" class="subtext">123456 abcd</a></li>
-                                            <li><a href="#" class="subtext">123456 abcd</a></li>
-                                        </ul>
-                                    </div>
-                                <li><a href="#thang3" class="subtext"  data-toggle="collapse">Tháng 3</a></li>
-                                    <div id="thang3" class="collapse">
-                                        <ul>
-                                            <li><a href="#" class="subtext">123456 abcd</a></li>
-                                            <li><a href="#" class="subtext">123456 abcd</a></li>
-                                        </ul>
-                                    </div>
-                                <li><a href="#thang2" class="subtext"  data-toggle="collapse">Tháng 2</a></li>
-                                    <div id="thang2" class="collapse">
-                                        <ul>
-                                            <li><a href="#" class="subtext">123456 abcd</a></li>
-                                            <li><a href="#" class="subtext">123456 abcd</a></li>
-                                        </ul>
-                                    </div>
-                                <li><a href="#thang1" class="subtext"  data-toggle="collapse">Tháng 1</a></li>
-                                    <div id="thang1" class="collapse">
-                                        <ul>
-                                            <li><a href="#" class="subtext">123456 abcd</a></li>
-                                            <li><a href="#" class="subtext">123456 abcd</a></li>
-                                        </ul>
-                                    </div>
-                            </ul>
-                            <span class="bvm" style="margin-top: 20px;">ABOUT ME:</span>
-                            <div class="card">
-                                <p class="ndung">
-                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error dolorum assumenda unde nobis facere molestiae pariatur magni ea vero, reiciendis, ducimus sunt. Dolorem ipsam vitae enim temporibus corrupti rem repellendus.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-            <div class="col-lg-7" style="margin-top: 25px;">
-                <span class="bvm">BÀI VIẾT MỚI</span>
-                <div class="card">
-                    <span class="tde">Đếm những vì sao trên cao<span class="float-right nt">25/4/2018</span></span>
-                    <p class="ndung">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate expedita itaque quidem laudantium laboriosam voluptatem, voluptate fugiat commodi omnis, cumque sint id! Ad laudantium necessitatibus nesciunt. Ut provident incidunt voluptatum aperiam perferendis ratione, non eaque ipsum fuga quo repellendus illum nulla blanditiis dolore inventore quibusdam soluta sed eum labore vel! Provident atque deserunt suscipit velit quos fuga officiis? Dignissimos delectus impedit vitae! Nulla doloremque aliquid omnis adipisci, laborum quaerat sit ab nobis odit rem. Veritatis incidunt obcaecati amet eius, cupiditate error nesciunt saepe sit vitae facilis fugit, pariatur quod quaerat quae eveniet natus placeat at exercitationem totam fuga? Iure, blanditiis.</p>
-                    <img src="5.png" alt="" class="img-fluid">
-                    <span class="chia"></span>
-                </div>
 
-                <div class="card">
-                    <span class="tde">Đếm những vì sao trên cao<span class="float-right nt">25/4/2018</span></span>
-                    <p class="ndung">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate expedita itaque quidem laudantium laboriosam voluptatem, voluptate fugiat commodi omnis, cumque sint id! Ad laudantium necessitatibus nesciunt. Ut provident incidunt voluptatum aperiam perferendis ratione, non eaque ipsum fuga quo repellendus illum nulla blanditiis dolore inventore quibusdam soluta sed eum labore vel! Provident atque deserunt suscipit velit quos fuga officiis? Dignissimos delectus impedit vitae! Nulla doloremque aliquid omnis adipisci, laborum quaerat sit ab nobis odit rem. Veritatis incidunt obcaecati amet eius, cupiditate error nesciunt saepe sit vitae facilis fugit, pariatur quod quaerat quae eveniet natus placeat at exercitationem totam fuga? Iure, blanditiis.</p>
-                    <img src="5.png" alt="" class="img-fluid">
-                    <span class="chia"></span>
-                </div>
+<body class="style-1">
+	<nav class="navbar navbar-expand-md navbar-dark sticky-top" style="background-color: #121F27;" id="navfont">
+		<!-- <a class="navbar-brand" href="#">Navbar</a> -->
+		<button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+		<div class="collapse navbar-collapse" id="collapsibleNavId">
+			<ul class="navbar-nav">
+				<li class="nav-item" id="home">
+					<a class="nav-link active" href="#">QUANG HUY</a>
+				</li>
+			</ul>
+			<ul class="nav navbar-nav ml-auto right">
+				<div class="dropdown">
+					<li class="nav-item" id="pj">
+						<a class="nav-link" href="#" data-toggle="dropdown">PROJECT</a>
+						<div class="dropdown-menu tips-p">
+							<a class="dropdown-item" href="#">Music</a>
+							<a class="dropdown-item" href="#">Music Responsive</a>
+							<a class="dropdown-item" href="#">ALTP_cmd</a>
+							<a class="dropdown-item" href="#">Blog</a>
+						</div>
+					</li>
+				</div>
+				<li class="nav-item" id="dhhh">
+					<a class="nav-link" href="#">TOP</a>
+				</li>
+				<li class="nav-item" id="fb">
+					<a class="nav-link" target="_blank" href="https://www.facebook.com/quanghuy124">FACEBOOK</a>
+				</li>
+				<li class="nav-item" id="ig">
+					<a class="nav-link" target="_blank" href="https://www.instagram.com/quanghuy1242/">INSTAGRAM</a>
+				</li>
+				<li class="nav-item" id="tw">
+					<a class="nav-link" target="_blank" href="https://twitter.com/quanghuy1242">TWITTER</a>
+				</li>
+				<li class="nav-item" id="wp">
+					<a class="nav-link" target="_blank" href="https://quanghuy1242.wordpress.com/">WORDPRESS</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<div id="logo">
+		<p style="line-height: 1;">
+			<i class="title"></i><br>
+		</p>
+		<div style="margin-top: 35px">
+			<span id="ccc">Lửa tắt, anh dõi theo những vì sao qua cửa sổ</span>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-5" id="dh" style="order: 1;margin-top: 25px;">
+				<div>
+					<!-- <span class="bvm">SẮP XẾP</span> -->
+					<span class="bvm" style="margin-top: 0px;">CHỦ ĐỀ:</span>
+					<ul>
+						<!-- <li><a href="#cd1" class="subtext" data-toggle="collapse">Chủ đề 1</a></li>
+						<div id="cd1" class="collapse">
+							<ul>
+								<li><a href="#" class="subtext">123456 abcd</a></li>
+								<li><a href="#" class="subtext">123456 abcd</a></li>
+							</ul>
+						</div>
+						<li><a href="#lm" class="subtext" data-toggle="collapse">Lãng mạng</a></li>
+						<div id="lm" class="collapse">
+							<ul>
+								<li><a href="#" class="subtext">123456 abcd</a></li>
+								<li><a href="#" class="subtext">123456 abcd</a></li>
+							</ul>
+						</div>
+						<li><a href="#hd" class="subtext" data-toggle="collapse">Hành động</a></li>
+						<div id="hd" class="collapse">
+							<ul>
+								<li><a href="#" class="subtext">123456 abcd</a></li>
+								<li><a href="#" class="subtext">123456 abcd</a></li>
+							</ul>
+						</div> -->
+						<li><a href="#tt" class="subtext" data-toggle="collapse">Thảm</a></li>
+						<div id="tt" class="collapse">
+							<ul>
+								<li><a href="#chiatay" class="subtext">Chia Tay</a></li>
+							</ul>
+						</div>
+					</ul>
 
-                <div class="card">
-                    <span class="tde">Đếm những vì sao trên cao<span class="float-right nt">25/4/2018</span></span>
-                    <p class="ndung">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate expedita itaque quidem laudantium laboriosam voluptatem, voluptate fugiat commodi omnis, cumque sint id! Ad laudantium necessitatibus nesciunt. Ut provident incidunt voluptatum aperiam perferendis ratione, non eaque ipsum fuga quo repellendus illum nulla blanditiis dolore inventore quibusdam soluta sed eum labore vel! Provident atque deserunt suscipit velit quos fuga officiis? Dignissimos delectus impedit vitae! Nulla doloremque aliquid omnis adipisci, laborum quaerat sit ab nobis odit rem. Veritatis incidunt obcaecati amet eius, cupiditate error nesciunt saepe sit vitae facilis fugit, pariatur quod quaerat quae eveniet natus placeat at exercitationem totam fuga? Iure, blanditiis.</p>
-                    <img src="5.png" alt="" class="img-fluid">
-                    <span class="chia"></span>
-                </div>
-            </div>
-            
-        </div>
-    </div>
-    <div id="footer">
-        Quang Huy 2018
-    </div>
-    <script src="js.js"></script>
+					<span class="bvm" style="margin-top: 20px;">THÁNG:</span>
+					<ul>
+						<!-- <li><a href="#thang4" class="subtext" data-toggle="collapse">Tháng 4</a></li>
+						<div id="thang4" class="collapse">
+							<ul>
+								<li><a href="#" class="subtext">123456 abcd</a></li>
+								<li><a href="#" class="subtext">123456 abcd</a></li>
+							</ul>
+						</div>
+						<li><a href="#thang3" class="subtext" data-toggle="collapse">Tháng 3</a></li>
+						<div id="thang3" class="collapse">
+							<ul>
+								<li><a href="#" class="subtext">123456 abcd</a></li>
+								<li><a href="#" class="subtext">123456 abcd</a></li>
+							</ul>
+						</div>
+						<li><a href="#thang2" class="subtext" data-toggle="collapse">Tháng 2</a></li>
+						<div id="thang2" class="collapse">
+							<ul>
+								<li><a href="#" class="subtext">123456 abcd</a></li>
+								<li><a href="#" class="subtext">123456 abcd</a></li>
+							</ul>
+						</div> -->
+						<li><a href="#thang1" class="subtext" data-toggle="collapse">Tháng 7</a></li>
+						<div id="thang1" class="collapse">
+							<ul>
+								<li><a href="#chiatay" class="subtext">Chia Tay</a></li>
+							</ul>
+						</div>
+					</ul>
+					<span class="bvm" style="margin-top: 20px;">ABOUT ME:</span>
+					<div class="card" style="overflow: auto;">
+						<p class="ndung">
+							Nguyễn Quang Huy
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-7" style="margin-top: 25px;">
+				<span class="bvm">BÀI VIẾT MỚI</span>
+				<div class="card style-1" id="chiatay">
+					<span class="tde">Chia Tay
+						<span class="float-right nt">9/7/2018</span>
+					</span>
+					<div class="ndung hideContent" contenteditable="false">
+						<div>Dưới chiều hoàng hôn không còn bao nhiêu hạt nắng</div>
+						<div>Cái bóng dài ngã về phía xa nơi mặt trời chỉ còn như mới ló dạng</div>
+						<div>Tiếng nổ xe như mơ hồ, cơn gió mạnh thổi qua</div>
+						<div>Mọi thứ có lẽ đang trở về như lúc ban đầu, lúc chúng ta chưa từng quen.</div>
+						<div>
+							<br>
+						</div>
+						<div>Một mình lang thang trên con đường dài bất tận</div>
+						<div>Dưới ánh trăng đêm, tôi ngêu ngao thứ giai điệu đã từng quen thuộc</div>
+						<div>Dòng người tấp nập, họ vụt qua thật nhanh</div>
+						<div>Chỉ còn mình tôi cô đơn trong cảm giác của ngày hôm qua đã từng ấm áp.</div>
+						<div>
+							<br>
+						</div>
+						<div>Băng qua con đường, những hạt mưa bắt đầu rơi vỡ</div>
+						<div>Mưa cuốn đi những kỉ niệm của một thời nồng cháy</div>
+						<div>Đôi mắt nhạt nhòa chìm trong những đốm sáng vô định phía xa</div>
+						<div>Tất cả trôi đi và trở nên nhạt dần rồi bị dập tắt mãi mãi.</div>
+						<div>
+							<br>
+						</div>
+						<div>Đứng dưới cơn mưa trong cái lạnh của mùa thu đang dần xa</div>
+						<div>Ánh đèn xe rọi thẳng vào gương mặt đang dần nhợt nhạt</div>
+						<div>Buốt giá bao phủ toàn bộ thân thể đã từng rất kiên cường</div>
+						<div>Và giờ chẳng còn gì có thể khiến tôi sợ hãi thêm một lần nữa.</div>
+					</div>
+					<!-- <img src="5.png" alt="" class="img-fluid"> -->
+					<div class="show-more">
+						<span onclick="clickshow()" id="showmorer" class="showmore" style="cursor: pointer;">more</span>
+					</div>
+					<span class="chia"></span>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<div id="footer">
+		Quang Huy 2018
+	</div>
+	<script src="js.js"></script>
 </body>
+
 </html>
