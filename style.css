@@ -31,29 +31,39 @@
 @import url('https://fonts.googleapis.com/css?family=Oswald');
 @import url('https://fonts.googleapis.com/css?family=Francois+One');
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+
+
+@import url('https://fonts.googleapis.com/css?family=Alegreya+Sans+SC');
+@import url('https://fonts.googleapis.com/css?family=Tinos');
 a.nav-link {
     line-height: 0.25;
     color: white!important;
 }
 #navfont {
-    font-family: 'Font4';
+    /* font-family: 'Font4'; */
+    font-family: 'Alegreya Sans SC', sans-serif;
     /* font-family: 'Mitr', sans-serif; */
     padding: 0px!important;
+    /* margin: 2px; */
     /* padding-top: 0px;
     padding-bottom: 0px; */
-    /* font-weight: 700; */
+    font-weight: 700;
+}
+.navbar-nav {
+    margin-bottom: -1px!important;
 }
 #home:hover {
     background-color: #416275;
 }
 #home {
-    font-family: 'Font4';
+    /* font-family: 'Font4'; */
+    font-family: 'Alegreya Sans SC', sans-serif;
     line-height: 1.5!important;
     /* padding: 15px; */
     /* font-family: 'Font3'; */
     padding-left: 1px;
     padding-right: 1px;
-    font-size: 16px!important;
+    font-size: 22px!important;
     background-color: #416275;
 }
 .nav-item {
@@ -90,7 +100,10 @@ a.nav-link {
     display: block;
 }
 .bvm {
-    font-family: 'Font3';
+    /* font-family: 'Font3'; */
+    font-family: 'Alegreya Sans SC', sans-serif;
+    font-weight: 800;
+    font-size: large;
     /* white-space: pre-line; */
     letter-spacing: 1px;
     border-bottom: 2px dotted;
@@ -145,7 +158,10 @@ a.nav-link {
 }
 #ccc {
     /* transition: border-bottom 1s!important; */
-    font-family: 'Font4';
+    /* font-family: 'Font4'; */
+    font-family: 'Alegreya Sans SC', sans-serif;
+    font-weight: 500;
+    font-size: large;
     text-transform: uppercase;
     /* letter-spacing: 1px; */
     border-bottom: 1px dotted;
@@ -159,7 +175,7 @@ a.nav-link {
 .card {
     border: none!important;
     /* height: 280px; */
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
     margin-bottom: 5px;
 }
 .chia {
@@ -171,8 +187,11 @@ a.nav-link {
     color: #416275;
 }
 .tde {
-    margin-top: 30px;
-    font-family: 'Font3';
+    /* margin-top: 30px; */
+    /* font-family: 'Font3'; */
+    font-family: 'Alegreya Sans SC', sans-serif;
+    font-weight: 800;
+    font-size: large;
     letter-spacing: 1px;
     display: block;
     padding-bottom: 5px;
@@ -181,7 +200,9 @@ a.nav-link {
 }
 .ndung {
     font-family: 'EB Garamond', serif;
+    /* font-family: 'Tinos', serif; */
     font-weight: 500;
+    font-size: medium;
     color: black;
 }
 .nt {
@@ -192,7 +213,9 @@ ul {
     padding-left: 15px;
 }
 a.subtext {
-    font-family: 'Font4';
+    /* font-family: 'Font4'; */
+    font-family: 'Alegreya Sans SC', sans-serif;
+    font-weight: 700;
     color: #416275;
     font-size: smaller;
 }
@@ -237,6 +260,21 @@ a:hover {
     .tips-p::after {
         display: none;
     }
+    #home {
+        display: none;
+    }
+    #dhhh {
+        display: none;
+    }
+}
+@media screen and (min-width:768px){
+    #dieuhuong {
+        display: none;
+    }
+}
+.navbar-dark .navbar-toggler {
+    border-color: transparent!important;
+    color: white!important;
 }
 /* #style-1::-webkit-scrollbar-track
 {
@@ -271,7 +309,7 @@ a:hover {
 
 .hideContent {
     overflow: hidden;
-    height: 60px;
+    height: 76px;
     line-height: 1.2;
 }
 
@@ -280,6 +318,6 @@ a:hover {
     height: auto;
     line-height: 1.2;
 }
-span {
+.show-more a {
     font-family: 'Font4'!important;
 }
