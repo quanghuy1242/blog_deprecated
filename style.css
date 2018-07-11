@@ -40,14 +40,14 @@ a.nav-link {
     color: white!important;
 }
 #navfont {
-    /* font-family: 'Font4'; */
-    font-family: 'Alegreya Sans SC', sans-serif;
+    font-family: 'Font4';
+    /* font-family: 'Alegreya Sans SC', sans-serif; */
     /* font-family: 'Mitr', sans-serif; */
     padding: 0px!important;
     /* margin: 2px; */
     /* padding-top: 0px;
     padding-bottom: 0px; */
-    font-weight: 700;
+    /* font-weight: 700; */
 }
 .navbar-nav {
     margin-bottom: -1px!important;
@@ -56,8 +56,8 @@ a.nav-link {
     background-color: #416275;
 }
 #home {
-    /* font-family: 'Font4'; */
-    font-family: 'Alegreya Sans SC', sans-serif;
+    font-family: 'Font4';
+    /* font-family: 'Alegreya Sans SC', sans-serif; */
     line-height: 1.5!important;
     /* padding: 15px; */
     /* font-family: 'Font3'; */
@@ -100,10 +100,10 @@ a.nav-link {
     display: block;
 }
 .bvm {
-    /* font-family: 'Font3'; */
-    font-family: 'Alegreya Sans SC', sans-serif;
-    font-weight: 800;
-    font-size: large;
+    font-family: 'Font3';
+    /* font-family: 'Alegreya Sans SC', sans-serif; */
+    /* font-weight: 800; */
+    /* font-size: large; */
     /* white-space: pre-line; */
     letter-spacing: 1px;
     border-bottom: 2px dotted;
@@ -158,10 +158,10 @@ a.nav-link {
 }
 #ccc {
     /* transition: border-bottom 1s!important; */
-    /* font-family: 'Font4'; */
-    font-family: 'Alegreya Sans SC', sans-serif;
-    font-weight: 500;
-    font-size: large;
+    font-family: 'Font4';
+    /* font-family: 'Alegreya Sans SC', sans-serif; */
+    /* font-weight: 500; */
+    /* font-size: large; */
     text-transform: uppercase;
     /* letter-spacing: 1px; */
     border-bottom: 1px dotted;
@@ -188,10 +188,10 @@ a.nav-link {
 }
 .tde {
     /* margin-top: 30px; */
-    /* font-family: 'Font3'; */
-    font-family: 'Alegreya Sans SC', sans-serif;
-    font-weight: 800;
-    font-size: large;
+    font-family: 'Font3';
+    /* font-family: 'Alegreya Sans SC', sans-serif; */
+    /* font-weight: 800; */
+    /* font-size: large; */
     letter-spacing: 1px;
     display: block;
     padding-bottom: 5px;
