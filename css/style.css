@@ -1,0 +1,107 @@
+:root {
+    --mdc-theme-primary: #416275;
+    --mdc-theme-secondary: #8aa3b1;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+}
+
+.demo-grid {
+    background: rgba(0,0,0,.2);
+    min-width: 360px;
+}
+
+.demo-cell {
+    background: rgba(0,0,0,.2);
+    height: 700px;
+}
+
+.nav-link {
+    text-transform: initial;
+}
+
+/* canh đều hai bên của class mdc-top-app-bar__title */
+.nav-logo {
+    padding-left: inherit;
+    padding-right: inherit;
+}
+/* end */
+
+/* Logo Quang Huy lớn */
+.big-logo {
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--mdc-theme-on-primary, #fff);
+}
+.big-logo__inner {
+    text-align: center;
+}
+/* end */
+
+/* Hover trên nav */
+.mdc-top-app-bar__section .mdc-button {
+    transition: 0.3s;
+}
+.mdc-top-app-bar__section .mdc-button:hover {
+    background-color: #3d5b6d; 
+}
+/* end */
+
+/* Sau khi click thì không còn focus tại button đó */
+.mdc-ripple-upgraded--background-focused::before {
+    opacity: 0 !important;
+}
+/* end */
+
+/* card */
+.cs-card-header {
+    padding: 0 0 0 0;
+    background-color: #416275;
+}
+
+.cs-card__content {
+    padding: 1rem;
+}
+
+.cs-card__title {
+    margin: 0;
+    padding: 1rem 1rem 0rem 1rem;
+    color: #fff;
+}
+
+.cs-card__subtitle {
+    color: #ffffff98;
+    margin: 0rem 0 0.5rem 1rem;
+}
+
+.cs-card {
+    margin-bottom: 1rem;
+}
+/* end */
+
+/* Giãn dòng ở content */
+.cs-ngat-dong {
+    height: 1rem;
+}
+
+.cs-card__content::first-letter {
+    font-size: 250%;
+    color: #416275;
+}
+/* end */
+
+/* FAB */
+.app-fab--absolute {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 55151515;
+}
+/* end */
