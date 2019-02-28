@@ -1,4 +1,4 @@
-:root {
+﻿:root {
     --mdc-theme-primary: #416275;
     --mdc-theme-secondary: #8aa3b1;
 }
@@ -152,3 +152,7 @@ body {
     background-color: #8aa3b138;
 }
 /* end */
+
+:not(:disabled).mdc-button--raised, :not(:disabled).mdc-button--unelevated{
+	background-color: #416275;
+} 
