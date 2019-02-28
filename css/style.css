@@ -34,7 +34,7 @@ body {
 
 /* Logo Quang Huy lớn */
 .big-logo {
-    height: 250px;
+    height: 220px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -43,13 +43,18 @@ body {
 .big-logo__inner {
     text-align: center;
 }
+
+.big-logo__inner h1 {
+    margin: 1rem;
+}
 /* end */
 
 /* Hover trên nav */
-.mdc-top-app-bar__section .mdc-button {
+.mdc-button--unelevate__hover {
     transition: 0.3s;
 }
-.mdc-top-app-bar__section .mdc-button:hover {
+
+.mdc-button--unelevate__hover:hover {
     background-color: #3d5b6d; 
 }
 /* end */
@@ -68,6 +73,7 @@ body {
 
 .cs-card__content {
     padding: 1rem;
+    display: block;
 }
 
 .cs-card__title {
@@ -103,5 +109,46 @@ body {
     bottom: 1rem;
     right: 1rem;
     z-index: 55151515;
+}
+/* end */
+
+/* Scroller */
+::-webkit-scrollbar-thumb {
+    background-color: #3d5b6db7;
+}
+
+::-webkit-scrollbar {
+    height: 8px;
+    width: 8px;
+}
+/* end */
+
+/* Footer */
+.footer {
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+
+.footer__inner {
+    text-align: center;
+    color: var(--mdc-theme-on-primary, #fff);
+}
+
+.footer__title {
+    margin: 0;
+    font-size: 120%;
+    line-height: 1.2;
+}
+
+.font-light {
+    font-weight: normal;
+}
+/* end */
+
+/* Selection */
+::selection {
+    background-color: #8aa3b138;
 }
 /* end */

@@ -25,11 +25,11 @@ function appendBlog(blog, blogMainContent) {
     cardHeader.append(cardTitle, cardSubTitle);
 
     let cardContent = document.createElement('div');
-    cardContent.className = "cs-card__content mdc-typography--body2";
+    cardContent.className = "cs-card__content mdc-card__actions mdc-typography--body2";
     cardContent.innerHTML = blog.content;
 
-    mdcCardInner.append(cardHeader, cardContent);
-    mdcCard.appendChild(mdcCardInner);
+    mdcCardInner.appendChild(cardHeader);
+    mdcCard.append(mdcCardInner, cardContent);
 
     blogMainContent.append(mdcCard);
 }
