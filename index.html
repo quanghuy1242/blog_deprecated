@@ -18,9 +18,45 @@
       <div class="mdc-dialog__surface">
         <h2 class="mdc-dialog__title">About</h2>
         <div class="mdc-dialog__content">
-          This website does not support old browser and Internet Explorer! <br>
-          Please use another modern browser and then try again to gain better performance! <br>
-          Thanks with love!
+          <div class="cs-tab-about">
+            <!-- Start tab -->
+            <div class="mdc-tab-bar" role="tablist">
+              <div class="mdc-tab-scroller">
+                <div class="mdc-tab-scroller__scroll-area">
+                  <div class="mdc-tab-scroller__scroll-content">
+                    <button class="mdc-tab mdc-tab--active" role="tab" tabindex="0" id="mdc-tab-1">
+                      <span class="mdc-tab__content">
+                        <span class="mdc-tab__text-label">About</span>
+                      </span>
+                      <span class="mdc-tab-indicator mdc-tab-indicator--active">
+                        <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                      </span>
+                      <span class="mdc-tab__ripple mdc-ripple-upgraded"></span>
+                    </button>
+                    <button class="mdc-tab" role="tab" tabindex="0" id="mdc-tab-2">
+                      <span class="mdc-tab__content">
+                        <span class="mdc-tab__text-label">Warning</span>
+                      </span>
+                      <span class="mdc-tab-indicator">
+                        <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                      </span>
+                      <span class="mdc-tab__ripple mdc-ripple-upgraded"></span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tab-container">
+              <div class="tab-content" id="mdc-tab-content-1">
+                Xin chào các bạn! <br>
+                Tôi tên là <b>Nguyễn Quang Huy</b>, <br>
+                Chào mừng các bạn đến đây! Ở đây không có cái gì hết 😙
+              </div>
+              <div class="tab-content" id="mdc-tab-content-2">
+                  This website does not support old browsers and Internet Explorer! Please use another modern browsers and then try again to gain better performance! Thanks with love!
+              </div>
+            </div>
+          </div>
         </div>
         <footer class="mdc-dialog__actions">
           <button type="button" class="mdc-button mdc-dialog__button" id="cs-btn-close-dialog" data-mdc-dialog-action="no">
@@ -55,6 +91,9 @@
       <div class="big-logo__inner">
         <h1 class="mdc-typography--headline2">Quang Huy</h1>
         <button class="mdc-button mdc-button--unelevated mdc-ripple-surface--accent mdc-button--unelevate__hover">LỬA TẮT, ANH DÕI THEO NHỮNG VÌ SAO QUA CỬA SỔ</button>
+        <div class="cs-logo-banner-action">
+          <button id="cs-btn-dialog" class="mdc-button cs-white-button">Learn About Me</button>
+        </div>
       </div>
     </div>
     <div class="mdc-layout-grid">
@@ -88,7 +127,6 @@
       <div class="footer__inner">
         <h5 class="mdc-typography--button footer__title font-light">Quang Huy</h5>
         <div class="mdc-typography--subtitle2 font-light">2019</div>
-        <button id="cs-btn-dialog" class="mdc-button mdc-button--unelevated mdc-ripple-surface--accent mdc-button--unelevate__hover">About</button>
       </div>
     </div>
   </div>

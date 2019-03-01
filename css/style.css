@@ -55,7 +55,7 @@ body {
 
 /* Logo Quang Huy lớn */
 .big-logo {
-    height: 220px;
+    height: 250px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -146,7 +146,7 @@ body {
 
 /* Footer */
 .footer {
-    height: 100px;
+    height: 80px;
     display: flex;
     justify-content: center;
     align-items: center;    
@@ -181,5 +181,34 @@ body {
 /* dialog */
 .mdc-dialog {
     z-index: 51;
+}
+
+.mdc-dialog .mdc-dialog__surface {
+    width: 600px;
+}
+/* end */
+
+/* button */
+.cs-white-button {
+    background-color: #fff !important;
+}
+
+.cs-logo-banner-action {
+    margin: 2rem 2rem 0 2rem;
+}
+/* end */
+
+
+/* tab */
+.show {
+    display: block !important;
+}
+
+.tab-container .tab-content {
+    display: none;
+    /* margin-top: 1rem; */
+    padding: 1rem;
+    min-height: 200px;
+    background-color: #f7f7f7;
 }
 /* end */
