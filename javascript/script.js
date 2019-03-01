@@ -2,18 +2,14 @@ const MDCDialog = mdc.dialog.MDCDialog;
 const MDCTabBar = mdc.tabBar.MDCTabBar;
 const MDCTab = mdc.tab.MDCTab;
 
+//#region ripple
 document.querySelectorAll('.mdc-button, .mdc-card__primary-action, .mdc-fab').forEach(element => {
   mdc.ripple.MDCRipple.attachTo(element);
 })
+//#endregion
 
+//#region Dialog
 let dialog = new MDCDialog(document.querySelector('.mdc-dialog'));
-let tabBarAbout = new MDCTabBar(document.querySelector('.mdc-tab-bar'));
-
-let tab1 = new MDCTab(document.querySelector('#mdc-tab-1'));
-let tab2 = new MDCTab(document.querySelector('#mdc-tab-2'));
-
-let tabs = document.querySelectorAll('.mdc-tab');
-
 let modal = document.querySelector('#aboutDialog');
 let btnModal = document.querySelector('#cs-btn-dialog');
 let btnCloseModal = document.querySelector('#cs-btn-close-dialog');
@@ -21,34 +17,27 @@ let btnCloseModal = document.querySelector('#cs-btn-close-dialog');
 btnModal.addEventListener('click', function () {
   dialog.open();
 }, false);
-
 btnCloseModal.addEventListener('click', function () {
   dialog.close();
-});
-
+}, false);
 document.querySelector('.mdc-dialog__scrim').addEventListener('click', function (event) {
   dialog.close();
-});
+}, false);
+//#endregion
 
-// tab
-// tabBarAbout.listen('MDCTabBar:activated', function (event) {
-//   let tab = tabs[event.detail.index];
-//   console.log(tab.getAttribute('id'));
-//   document.querySelector('#mdc-tab-content-1').classList.add('show');
-//   document.querySelector('#mdc-tab-content-2').classList.remove('show');
-// });
-tabBarAbout.activateTab(0);
+//#region tabBar
+let tabBarAbout = new MDCTabBar(document.querySelector('.mdc-tab-bar'));
+let tabs = document.querySelectorAll('.mdc-tab'); // các tab-clickable
+let tabscontent = document.querySelectorAll('.tab-content'); // nội dung từng tab
 
-let tabscontent = document.querySelectorAll('.tab-content');
-function a (tab) {
-  tab.listen('MDCTab:interacted', function (event) {
-    tabscontent.forEach(tc => {
-      tc.classList.remove('show');
-    });
-    let tabscontentId = event.detail.tabId.split('-')[2];
-    document.querySelector(`#mdc-tab-content-${tabscontentId}`).classList.add('show');
+tabBarAbout.listen('MDCTabBar:activated', function (event) {
+  let tabId = tabs[event.detail.index].getAttribute('id'); // Lấy id của tab đã click
+  // Xoá hết class .show của tất cả các thẻ content
+  tabscontent.forEach(tc => {
+    tc.classList.remove('show');
   });
-};
-a(tab1);
-a(tab2);
-tabs[0].click();
+  // cái nào đã click thì add .show vô lại thẻ content đó
+  let tabscontentId = tabId.split('-')[2];
+  document.querySelector(`#mdc-tab-content-${tabscontentId}`).classList.add('show');
+});
+//#endregion

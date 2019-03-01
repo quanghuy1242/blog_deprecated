@@ -174,9 +174,9 @@ body {
 }
 /* end */
 
-:not(:disabled).mdc-button--raised, :not(:disabled).mdc-button--unelevated{
+/* :not(:disabled).mdc-button--raised, :not(:disabled).mdc-button--unelevated{
 	background-color: #416275;
-}
+} */
 
 /* dialog */
 .mdc-dialog {
