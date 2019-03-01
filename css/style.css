@@ -40,7 +40,15 @@ body {
 @media only screen and (max-width: 599px) {
     .mdc-top-app-bar__row {
         flex-direction: column;
-        height: 75px;
+        height: auto;
+    }
+
+    .mdc-top-app-bar__section.mdc-top-app-bar__section--align-end {
+        justify-content: space-between;
+    }
+
+    .nav-link {
+        width: 100%;
     }
 }
 /* end */
@@ -96,7 +104,7 @@ body {
 }
 
 .cs-card__subtitle {
-    color: #ffffff98;
+    color: rgba(255, 255, 255, 0.596);
     margin: 0rem 0 0.5rem 1rem;
 }
 
@@ -121,6 +129,7 @@ body {
     position: fixed;
     bottom: 1rem;
     right: 1rem;
+    z-index: 50;
 }
 /* end */
 
@@ -168,3 +177,9 @@ body {
 :not(:disabled).mdc-button--raised, :not(:disabled).mdc-button--unelevated{
 	background-color: #416275;
 }
+
+/* dialog */
+.mdc-dialog {
+    z-index: 51;
+}
+/* end */
