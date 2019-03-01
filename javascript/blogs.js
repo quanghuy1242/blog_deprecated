@@ -1,4 +1,4 @@
-﻿var blogs = [
+﻿let blogs = [
     {
         id: 1,
         title: "Chạy trốn",

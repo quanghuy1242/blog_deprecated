@@ -12,6 +12,26 @@
 </head>
 
 <body>
+  <!-- Dialog -->
+  <div class="mdc-dialog" id="aboutDialog" role="contentinfo">
+    <div class="mdc-dialog__container">
+      <div class="mdc-dialog__surface">
+        <h2 class="mdc-dialog__title">About</h2>
+        <div class="mdc-dialog__content">
+          This website does not support old browser and IE, Microsoft Edge! <br>
+          Please use another modern browser and then try again to gain better performance! <br>
+          Thanks with love!
+        </div>
+        <footer class="mdc-dialog__actions">
+          <button type="button" class="mdc-button mdc-dialog__button" id="cs-btn-close-dialog" data-mdc-dialog-action="no">
+            <span class="mdc-button__label">Ok</span>
+          </button>
+        </footer>
+      </div>
+    </div>
+    <div class="mdc-dialog__scrim"></div>
+  </div>
+  <!-- end dialog -->
   <a href="#" class="mdc-fab app-fab--absolute" aria-label="Favorite">
     <span class="mdc-fab__icon material-icons">keyboard_arrow_up</span>
   </a>
@@ -68,7 +88,7 @@
       <div class="footer__inner">
         <h5 class="mdc-typography--button footer__title font-light">Quang Huy</h5>
         <div class="mdc-typography--subtitle2 font-light">2019</div>
-        <!-- <span style="color: red">❤</span> -->
+        <button id="cs-btn-dialog" class="mdc-button mdc-button--unelevated mdc-ripple-surface--accent mdc-button--unelevate__hover">About</button>
       </div>
     </div>
   </div>

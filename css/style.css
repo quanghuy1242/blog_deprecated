@@ -32,6 +32,19 @@ body {
 }
 /* end */
 
+.mdc-top-app-bar__title {
+    padding-left: 0.5rem;
+}
+
+/* nav màn hinh nhỏ */
+@media only screen and (max-width: 599px) {
+    .mdc-top-app-bar__row {
+        flex-direction: column;
+        height: 75px;
+    }
+}
+/* end */
+
 /* Logo Quang Huy lớn */
 .big-logo {
     height: 220px;
@@ -108,7 +121,6 @@ body {
     position: fixed;
     bottom: 1rem;
     right: 1rem;
-    z-index: 55151515;
 }
 /* end */
 
@@ -125,7 +137,7 @@ body {
 
 /* Footer */
 .footer {
-    height: 60px;
+    height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;    
@@ -155,4 +167,4 @@ body {
 
 :not(:disabled).mdc-button--raised, :not(:disabled).mdc-button--unelevated{
 	background-color: #416275;
-} 
+}
