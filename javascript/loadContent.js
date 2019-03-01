@@ -4,7 +4,6 @@ const listTitleContent = document.querySelector('#cs-list-summary');
 function appendBlog(blog, blogMainContent) {
     let mdcCard = document.createElement('div');
     mdcCard.className = "mdc-card cs-card";
-    mdcCard.setAttribute("id", blog.id)
 
     let mdcCardInner = document.createElement('div');
     mdcCardInner.className = "mdc-card__primary-action mdc-ripple-surface--accent";
@@ -31,7 +30,13 @@ function appendBlog(blog, blogMainContent) {
     mdcCardInner.appendChild(cardHeader);
     mdcCard.append(mdcCardInner, cardContent);
 
-    blogMainContent.append(mdcCard);
+    let offsetDiv = document.createElement('div');
+    offsetDiv.style.height = '64px';
+    offsetDiv.style.marginTop = '-64px';
+    offsetDiv.setAttribute("id", blog.id);
+    offsetDiv.className = "cs-card-content";
+
+    blogMainContent.append(offsetDiv, mdcCard);
 }
 
 function appendListTitle(title, id, listTitleMainContent) {

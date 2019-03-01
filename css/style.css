@@ -25,6 +25,11 @@ body {
     text-transform: initial;
 }
 
+#cs-list-summary {
+    position: sticky;
+    top: 64px;
+}
+
 /* canh đều hai bên của class mdc-top-app-bar__title */
 .nav-logo {
     padding-left: inherit;
@@ -110,6 +115,7 @@ body {
 
 .cs-card {
     margin-bottom: 1rem;
+    margin-top: 8px;
 }
 /* end */
 
@@ -212,3 +218,8 @@ body {
     background-color: #f7f7f7;
 }
 /* end */
+
+.mdc-list-item__actived {
+    background-color: #416275 !important;
+    color: var(--mdc-theme-on-primary, #fff) !important;
+}

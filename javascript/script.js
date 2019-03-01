@@ -41,3 +41,32 @@ tabBarAbout.listen('MDCTabBar:activated', function (event) {
   document.querySelector(`#mdc-tab-content-${tabscontentId}`).classList.add('show');
 });
 //#endregion
+
+//#region scroll
+(
+  function () {
+    let section = document.querySelectorAll(".cs-card-content");
+    let sections = {};
+    let i = 0;
+
+    Array.prototype.forEach.call(section, e => {
+      sections[e.id] = e.offsetTop;
+    });
+
+    window.onscroll = function () {
+      let scrollPostion = document.documentElement.scrollTop || document.body.scrollTop;
+
+      for (i in sections) {
+        if (sections[i] <= scrollPostion) {
+          document.querySelectorAll('.mdc-list a').forEach(ele => {
+            ele.classList.remove('mdc-list-item__actived');
+          });
+          document.querySelector(`a[href='#${i}']`).classList.add('mdc-list-item__actived');
+        }
+      }
+    };
+
+  }
+)();
+document.querySelector('.mdc-list a').classList.add('mdc-list-item__actived');
+//#endregion
