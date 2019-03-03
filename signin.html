@@ -15,7 +15,7 @@
   <style>
     body {
       height: 100vh;
-      background-color: rgba(0,0,0,.32);
+      /* background-color: rgba(0,0,0,.32); */
     }
 
     .mdc-layout-grid,
@@ -32,33 +32,63 @@
 
     .wrapper {
       min-width: 500px;
-      padding: 1rem;
+      max-width: 500px;
+      /* padding: 1rem;
+      padding-top: 0; */
     }
 
     .cs-form {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      height: 190px;
+      height: 180px;
+      margin: 1rem;
+      margin-bottom: 2rem;
     }
 
     .demo-card__title {
-      padding-bottom: 1rem;
-      padding-left: 0;
+      /* padding-bottom: 2rem; */
+      /* padding-left: 0; */
+      margin: 1rem;
+      text-align: center;
+    }
+
+    .demo-card__title div {
+      color: #416275;
     }
 
     #aaaa {
-      align-items: flex-start;
+      /* align-items: flex-start; */
+      /* width: 90px; */
+      float: right;
     }
 
     .invalid-text {
       color: red;
+      height: 36px;
+      float: left;
+      width: 368px;
     }
 
     .mdc-linear-progress {
-      margin-top: 0.5rem;
-      height: 2px;
+      /* margin-top: 0.5rem; */
+      height: 3px;
       opacity: 0;
+      z-index: 11;
+      border-radius: 4px 4px 0px 0px;
+    }
+
+    .disable-div {
+      position: fixed;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+      width: 500px;
+      height: 335px;
+      background-color: rgba(65, 98, 117, 0.096);
+      z-index: 10;
+      border-radius: 4px;
+      display: none;
     }
   </style>
 </head>
@@ -67,34 +97,47 @@
   <div class="mdc-layout-grid">
     <div class="mdc-layout-grid__inner">
       <div class="mdc-layout-grid__cell--span-12">
-        <div class="wrapper mdc-card">
-          <div class="demo-card__title mdc-typography mdc-typography--headline6">Sign in
-              <div role="progressbar" class="mdc-linear-progress mdc-linear-progress--indeterminate">
-                <div class="mdc-linear-progress__buffering-dots"></div>
-                <div class="mdc-linear-progress__buffer"></div>
-                <div class="mdc-linear-progress__bar mdc-linear-progress__primary-bar">
-                  <span class="mdc-linear-progress__bar-inner"></span>
-                </div>
-                <div class="mdc-linear-progress__bar mdc-linear-progress__secondary-bar">
-                  <span class="mdc-linear-progress__bar-inner"></span>
-                </div>
-              </div>
+        <div class="disable-div"></div>
+        <div class="wrapper mdc-card mdc-elevation--z4">
+          <div role="progressbar" class="mdc-linear-progress mdc-linear-progress--indeterminate">
+            <div class="mdc-linear-progress__buffering-dots"></div>
+            <div class="mdc-linear-progress__buffer"></div>
+            <div class="mdc-linear-progress__bar mdc-linear-progress__primary-bar">
+              <span class="mdc-linear-progress__bar-inner"></span>
+            </div>
+            <div class="mdc-linear-progress__bar mdc-linear-progress__secondary-bar">
+              <span class="mdc-linear-progress__bar-inner"></span>
+            </div>
+          </div>
+          <div class="demo-card__title">
+            <div class="mdc-typography mdc-typography--headline4" style="font-weight: 400">Administration</div>
+            <div class="mdc-typography mdc-typography--headline6">Sign in</div>
           </div>
           <!-- <div id="firebaseui-auth-container"></div> -->
           <form onsubmit="return false;" class="cs-form">
-            <div class="mdc-text-field" id="txtEmail">
-              <input class="mdc-text-field__input" type="text" id="email">
-              <div class="mdc-line-ripple"></div>
-              <label class="mdc-floating-label">Email</label>
+            <div class="mdc-text-field mdc-text-field--outlined" id="txtEmail">
+              <input class="mdc-text-field__input" id="email">
+              <div class="mdc-notched-outline">
+                <div class="mdc-notched-outline__leading"></div>
+                <div class="mdc-notched-outline__notch">
+                  <label class="mdc-floating-label">Email</label>
+                </div>
+                <div class="mdc-notched-outline__trailing"></div>
+              </div>
             </div>
-            <div class="mdc-text-field" id="txtPass">
-              <input class="mdc-text-field__input" type="password" id="pass">
-              <div class="mdc-line-ripple"></div>
-              <label class="mdc-floating-label">Password</label>
+            <div class="mdc-text-field mdc-text-field--outlined" id="txtPass">
+              <input class="mdc-text-field__input" id="pass" type="password">
+              <div class="mdc-notched-outline">
+                <div class="mdc-notched-outline__leading"></div>
+                <div class="mdc-notched-outline__notch">
+                  <label class="mdc-floating-label">Password</label>
+                </div>
+                <div class="mdc-notched-outline__trailing"></div>
+              </div>
             </div>
-            <div class="invalid-text mdc-typography--subtitle2"></div>
-            <div style="display: flex; justify-content: flex-end">
-                <button id="aaaa" class="mdc-button mdc-button--raised">Sign in</button>
+            <div style="display: block">
+              <div class="invalid-text mdc-typography--subtitle2"></div>
+              <button id="aaaa" class="mdc-button mdc-button--raised">Sign in</button>
             </div>
           </form>
         </div>

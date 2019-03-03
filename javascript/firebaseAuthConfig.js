@@ -1,10 +1,9 @@
 let email = document.querySelector('#email');
 let password = document.querySelector('#pass');
+let disableDiv = document.querySelector('.disable-div');
 document.querySelector('#aaaa').addEventListener('click', () => {
   document.querySelector('.mdc-linear-progress').style.opacity = "1";
-  document.querySelector('#aaaa').disabled = true;
-  email.disabled = true;
-  password.disabled = true;
+  disableDiv.style.display = 'block';
   firebase.auth()
     .signInWithEmailAndPassword(email.value, password.value)
     .then(() => {
@@ -19,9 +18,7 @@ document.querySelector('#aaaa').addEventListener('click', () => {
     .catch(function (error) {
       // Handle Errors here.
       document.querySelector('.mdc-linear-progress').style.opacity = "0";
-      document.querySelector('#aaaa').disabled = false;
-      email.disabled = false;
-      password.disabled = false;
+      disableDiv.style.display = 'none';
       var errorCode = error.code;
       var errorMessage = error.message;
       console.log(errorCode, errorMessage);
