@@ -7,10 +7,35 @@ const MDCLinearProgress = mdc.linearProgress.MDCLinearProgress;
 const MDCList = mdc.list.MDCList;
 const MDCRipple = mdc.ripple.MDCRipple;
 const MDCTextField = mdc.textField.MDCTextField;
+const MDCMenu = mdc.menu.MDCMenu;
+const MDCMenuSurface = mdc.menuSurface.MDCMenuSurface;
 
-document.querySelectorAll('.mdc-button').forEach(element => {
+document.querySelectorAll('.mdc-button, .mdc-menu li').forEach(element => {
   mdc.ripple.MDCRipple.attachTo(element);
 })
+
+//#region Menu Quang Huy
+const menuQH = new MDCMenu(document.querySelector('.mdc-menu'));
+let btnOpenQH = document.querySelector('#btnOpenQH');
+
+btnOpenQH.addEventListener('click', () => {
+  menuQH.open = !menuQH.open;
+  menuQH.listen('MDCMenu:selected', function(e) {
+    let indexClick = e.detail.index;
+    if (indexClick === 0) { // đăng xuất
+      firebase.auth().signOut().then(function() {
+        // Sign-out successful.
+      }).catch(function(error) {
+        // An error happened.
+        console.log('An error happened');
+      });
+    }
+  });
+});
+
+document.querySelector('.mdc-menu li').click();
+
+//#endregion
 
 //#region tabBar
 let tabBarAbout = new MDCTabBar(document.querySelector('.mdc-tab-bar'));
@@ -37,18 +62,26 @@ let listItem;
 //#region inputEdit
 let titleInput = new MDCTextField(document.querySelector('#titleBlog'));
 let titleContent = new MDCTextField(document.querySelector('#contentBlog'));
-let btnEdit = document.querySelector('#btnEdit');
+let btnUpdate = document.querySelector('#btnEdit');
 //#endregion
 
 //#region dialog
-let dialog = new MDCDialog(document.querySelector('.mdc-dialog'));
+let dialog = new MDCDialog(document.querySelector('#aboutDialog'));
 let btnCReload = document.querySelector('#cs-btn-close-dialog');
+dialog.scrimClickAction = '';
+
+
+let dialogLoading = new MDCDialog(document.querySelector('#loadingPopUp'));
+dialogLoading.scrimClickAction = '';
+dialogLoading.escapeKeyAction = '';
 //#endregion
 
 //#region load danh sách
 
-let ulListItem = document.querySelector('.mdc-list');
+let ulListItem = document.querySelector('#listDanhSachChuDe');
 let contentReceived = document.querySelector('.cs-edit-post');
+let idCLick;
+let selectedBlog;
 
 function appendList (title, id, listElement) {
   let liListItem = document.createElement('li');
@@ -77,63 +110,72 @@ function appendList (title, id, listElement) {
   listElement.append(liListItem);
 }
 
+function getAndRenderList(blogs) {
+  ulListItem.innerHTML = "";
+  blogs.forEach(blog => {
+    appendList(blog.data().title, blog.id, ulListItem);
+  });
+  
+  document.querySelector('#listDanhSachChuDe li').setAttribute('aria-selected', true);
+  document.querySelector('#listDanhSachChuDe li').classList.add('mdc-list-item--selected');
+
+  list = new MDCList(document.querySelector('#listDanhSachChuDe'));
+  listItem = list.listElements.map(ele => new MDCRipple(ele));
+  list.singleSelection = true;
+}
+
 //#region KIểm tra đăng nhập
 firebase.auth().onAuthStateChanged(function (user) {
   if (user) {
     console.log('Đã đăng nhập');
     document.querySelector('body').style.display = "initial";
-    let idCLick;
+    
     db.collection('blogs')
       .get()
       .then((blogs) => {
-        blogs.forEach(blog => {
-          appendList(blog.data().title, blog.id, ulListItem);
-        });
-        
-        document.querySelector('.mdc-list li').setAttribute('aria-selected', true);
-        document.querySelector('.mdc-list li').classList.add('mdc-list-item--selected');
-
-
-        list = new MDCList(document.querySelector('.mdc-list'));
-        listItem = list.listElements.map(ele => new MDCRipple(ele));
-        list.singleSelection = true;
+        getAndRenderList(blogs);
 
         list.listen('MDCList:action', function(e) {
+          dialogLoading.open();
           idCLick = e.detail;
-          // console.log(blogs.docs[e.detail].id);
-          // console.log(blogs.docs[e.detail].data().title);
-          // contentReceived.innerHTML = blogs.docs[e.detail].data().content;
-          titleInput.value = blogs.docs[idCLick].data().title;
-          titleContent.value = blogs.docs[idCLick].data().content;
-        })
-        btnEdit.addEventListener('click', () => {
-          console.log(idCLick);
-          // update
           db.collection('blogs')
-            .doc(blogs.docs[idCLick].id)
-            .update({
-              title: titleInput.value,
-              content: titleContent.value
-            })
-            .then(() => {
-              dialog.open();
-              btnCReload.addEventListener('click', () => {
-                window.location.reload(); // reload
-              })
-              document.querySelector('.mdc-dialog__scrim').addEventListener('click', function (event) {
-                window.location.reload(); // reload
-              }, false);
-            })
-            .catch((err) => {
-              alert('Lỗi: ' + err);
+            .get()
+            .then((blogss) => {
+              selectedBlog = blogss.docs[idCLick];
+              titleInput.value = selectedBlog.data().title;
+              titleContent.value = selectedBlog.data().content;
+              dialogLoading.close();
             })
         })
-        document.querySelector('.mdc-list li').click();
+        document.querySelector('#listDanhSachChuDe li').click();
       })
   } else {
     console.log('Chưa đăng nhập');
     window.location.replace('../signin.html');
   }
 });
+  
+btnUpdate.addEventListener('click', () => {
+  db.collection('blogs')
+    .doc(selectedBlog.id)
+    .update({
+      title: titleInput.value,
+      content: titleContent.value
+    })
+    .then(() => {
+      dialog.open();
+      btnCReload.addEventListener('click', () => {
+        db.collection('blogs')
+          .get()
+          .then((blogs) => {
+            getAndRenderList(blogs);
+          })
+      })
+    })
+    .catch((err) => {
+      alert('Lỗi: ' + err);
+    });
+})
+
 //#endregion
 //#endregion

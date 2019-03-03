@@ -26,10 +26,22 @@
         </a>
       </section>
       <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
-        <button target="_blank"
-          class="mdc-button mdc-button--unelevated mdc-ripple-surface--accent mdc-button--unelevate__hover">
-          <span>Quang Huy</span>
-        </button>
+        <div>
+          <button id="btnOpenQH"
+            class="mdc-button mdc-button--unelevated mdc-ripple-surface--accent mdc-button--unelevate__hover">
+            <span class="mdc-button__label">Quang Huy</span>
+            <i class="material-icons mdc-button__icon" aria-hidden="true">arrow_drop_down</i>
+          </button>
+          <div class="mdc-menu-surface--anchor">
+            <div class="mdc-menu mdc-menu-surface" tabindex="0">
+              <ul class="mdc-list" role="menu" id="menuQH">
+                <li class="mdc-list-item" role="menuitem">
+                  <span class="mdc-list-item__text">Sign out</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </section>
     </div>
   </header>
@@ -67,7 +79,7 @@
             </div>
             <div class="tab-container">
               <div class="tab-content show" id="mdc-tab-content-1" role="listbox">
-                <ul class="mdc-list mdc-list--two-line">
+                <ul class="mdc-list mdc-list--two-line" id="listDanhSachChuDe">
                   <!-- <li class="mdc-list-item mdc-list-item--selected" tabindex="0" role="option" aria-selected="true">
                     <span class="mdc-list-item__text">
                       <span class="mdc-list-item__primary-text">Chạy ngay đi</span>
@@ -131,15 +143,40 @@
   <div class="mdc-dialog" id="aboutDialog" role="contentinfo">
     <div class="mdc-dialog__container">
       <div class="mdc-dialog__surface">
-        <h2 class="mdc-dialog__title">Success</h2>
+        <h2 class="mdc-dialog__title">Thông báo</h2>
         <div class="mdc-dialog__content">
           Update thành công!
         </div>
         <footer class="mdc-dialog__actions">
           <button type="button" class="mdc-button mdc-dialog__button" id="cs-btn-close-dialog" data-mdc-dialog-action="no">
-            <span class="mdc-button__label">Reload</span>
+            <span class="mdc-button__label">Ok</span>
           </button>
         </footer>
+      </div>
+    </div>
+    <div class="mdc-dialog__scrim"></div>
+  </div>
+  <div class="mdc-dialog" id="loadingPopUp">
+    <div class="mdc-dialog__container">
+      <div class="mdc-dialog__surface">
+        <h2 class="mdc-dialog__title">Loading...</h2>
+        <div class="mdc-dialog__content">
+          <div style="margin-top: 0.5rem;" role="progressbar" class="mdc-linear-progress mdc-linear-progress--indeterminate">
+            <div class="mdc-linear-progress__buffering-dots"></div>
+            <div class="mdc-linear-progress__buffer"></div>
+            <div class="mdc-linear-progress__bar mdc-linear-progress__primary-bar">
+              <span class="mdc-linear-progress__bar-inner"></span>
+            </div>
+            <div class="mdc-linear-progress__bar mdc-linear-progress__secondary-bar">
+              <span class="mdc-linear-progress__bar-inner"></span>
+            </div>
+          </div>
+        </div>
+        <footer class="mdc-dialog__actions">
+            <button type="button" class="mdc-button mdc-dialog__button">
+              <span class="mdc-button__label">Ok</span>
+            </button>
+          </footer>
       </div>
     </div>
     <div class="mdc-dialog__scrim"></div>

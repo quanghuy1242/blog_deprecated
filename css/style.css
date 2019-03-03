@@ -145,8 +145,8 @@ body {
 }
 
 ::-webkit-scrollbar {
-    height: 8px;
-    width: 8px;
+    height: 5px;
+    width: 5px;
 }
 /* end */
 
@@ -223,3 +223,10 @@ body {
     background-color: #416275 !important;
     color: var(--mdc-theme-on-primary, #fff) !important;
 }
+
+/* text */
+.mdc-text-field--focused .mdc-floating-label--float-above {
+    color: #416275 !important;
+}
+/* end */
+

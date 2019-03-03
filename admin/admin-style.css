@@ -18,7 +18,6 @@
 
 .mdc-tab-bar {
     width: 250px;
-    margin-right: 1rem;
 }
 
 .mdc-tab-scroller__scroll-content {
@@ -48,15 +47,16 @@
     justify-content: space-between;
 }
 
-.mdc-list {
+#listDanhSachChuDe.mdc-list {
     min-width: 250px !important;
     padding: 0;
     overflow: auto;
     background-color: #f7f7f7c2;
 }
 
-.mdc-list li {
-    cursor: pointer;}
+#listDanhSachChuDe.mdc-list li {
+    cursor: pointer;
+}
 
 .mdc-list::-webkit-scrollbar {
     width: 2px;
