@@ -1,0 +1,95 @@
+.cs-tab-about {
+    display: flex;
+    /* margin-top: 1rem; */
+}
+
+.tab-container {
+    width: 100%;
+}
+
+.tab-container .tab-content {
+    height: 83vh;
+    background-color: initial;
+    flex-direction: row;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-right: 0;
+}
+
+.mdc-tab-bar {
+    width: 250px;
+    margin-right: 1rem;
+}
+
+.mdc-tab-scroller__scroll-content {
+    flex-direction: column;
+}
+
+.mdc-tab-indicator--active {
+    background-color: #416275;
+    color: var(--mdc-theme-on-primary, #fff);
+}
+
+.mdc-tab--active .mdc-tab__text-label {
+    color: var(--mdc-theme-on-primary, #fff);
+}
+
+.show {
+    display: flex !important;
+}
+
+.cs-edit-post {
+    width: 100%;
+    margin-left: 0.5rem;
+    padding: 0.5rem;
+    /* height: 100%; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.mdc-list {
+    min-width: 250px !important;
+    padding: 0;
+    overflow: auto;
+    background-color: #f7f7f7c2;
+}
+
+.mdc-list li {
+    cursor: pointer;}
+
+.mdc-list::-webkit-scrollbar {
+    width: 2px;
+    height: 2px;
+}
+
+.mdc-list::-webkit-scrollbar-thumb {
+    background-color: #3d5b6db7;
+}
+
+.cs-text-field {
+    width: 100%;
+}
+
+#titleBlog {
+    width: 100%;
+}
+
+.mdc-text-field--textarea {
+    height: 100%;
+    width: 100%;
+    /* flex-grow: 3 */
+}
+
+.mdc-text-field--textarea textarea {
+    resize: none;
+}
+
+.cs-content-blog {
+    height: 63vh;
+}
+
+.cs-action {
+    display: flex;
+    justify-content: flex-end;
+}

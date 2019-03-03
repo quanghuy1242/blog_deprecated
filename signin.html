@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- Firebase Auth UI -->
+  <!-- <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script> -->
+  <!-- <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" /> -->
+  <title>Sign in</title>
+  <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body {
+      height: 100vh;
+      background-color: rgba(0,0,0,.32);
+    }
+
+    .mdc-layout-grid,
+    .mdc-layout-grid__inner,
+    .mdc-layout-grid__cell--span-12 {
+      height: 100%;
+    }
+
+    .mdc-layout-grid__cell--span-12 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .wrapper {
+      min-width: 500px;
+      padding: 1rem;
+    }
+
+    .cs-form {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 190px;
+    }
+
+    .demo-card__title {
+      padding-bottom: 1rem;
+      padding-left: 0;
+    }
+
+    #aaaa {
+      align-items: flex-start;
+    }
+
+    .mdc-floating-label--float-above {
+      color: #416275 !important;
+    }
+
+    .invalid-text {
+      color: red;
+    }
+
+    .mdc-linear-progress {
+      margin-top: 0.5rem;
+      height: 2px;
+      opacity: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="mdc-layout-grid">
+    <div class="mdc-layout-grid__inner">
+      <div class="mdc-layout-grid__cell--span-12">
+        <div class="wrapper mdc-card">
+          <div class="demo-card__title mdc-typography mdc-typography--headline6">Sign in
+              <div role="progressbar" class="mdc-linear-progress mdc-linear-progress--indeterminate">
+                <div class="mdc-linear-progress__buffering-dots"></div>
+                <div class="mdc-linear-progress__buffer"></div>
+                <div class="mdc-linear-progress__bar mdc-linear-progress__primary-bar">
+                  <span class="mdc-linear-progress__bar-inner"></span>
+                </div>
+                <div class="mdc-linear-progress__bar mdc-linear-progress__secondary-bar">
+                  <span class="mdc-linear-progress__bar-inner"></span>
+                </div>
+              </div>
+          </div>
+          <!-- <div id="firebaseui-auth-container"></div> -->
+          <form onsubmit="return false;" class="cs-form">
+            <div class="mdc-text-field" id="txtEmail">
+              <input class="mdc-text-field__input" type="text" id="email">
+              <div class="mdc-line-ripple"></div>
+              <label class="mdc-floating-label">Email</label>
+            </div>
+            <div class="mdc-text-field" id="txtPass">
+              <input class="mdc-text-field__input" type="password" id="pass">
+              <div class="mdc-line-ripple"></div>
+              <label class="mdc-floating-label">Password</label>
+            </div>
+            <div class="invalid-text mdc-typography--subtitle2"></div>
+            <div style="display: flex; justify-content: flex-end">
+                <button id="aaaa" class="mdc-button mdc-button--raised">Sign in</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script>
+  <script src="javascript/initializeFirebase.js"></script>
+  <script src="javascript/firebaseAuthConfig.js"></script>
+  <script>
+    document.querySelectorAll('.mdc-button').forEach(element => {
+      mdc.ripple.MDCRipple.attachTo(element);
+    })
+    const MDCTextField = mdc.textField.MDCTextField;
+    let emailInput = new MDCTextField(document.querySelector('#txtEmail'));
+    let passInput = new MDCTextField(document.querySelector('#txtPass'));
+  </script>
+</body>
+
+</html>

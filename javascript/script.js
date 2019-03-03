@@ -1,6 +1,7 @@
 const MDCDialog = mdc.dialog.MDCDialog;
 const MDCTabBar = mdc.tabBar.MDCTabBar;
 const MDCTab = mdc.tab.MDCTab;
+const MDCLinearProgress = mdc.linearProgress.MDCLinearProgress;
 
 //#region ripple
 document.querySelectorAll('.mdc-button, .mdc-card__primary-action, .mdc-fab').forEach(element => {
@@ -37,36 +38,7 @@ tabBarAbout.listen('MDCTabBar:activated', function (event) {
     tc.classList.remove('show');
   });
   // cái nào đã click thì add .show vô lại thẻ content đó
-  let tabscontentId = tabId.split('-')[2];
+  let tabscontentId = tabId.split('-').reverse()[0];
   document.querySelector(`#mdc-tab-content-${tabscontentId}`).classList.add('show');
 });
-//#endregion
-
-//#region scroll
-(
-  function () {
-    let section = document.querySelectorAll(".cs-card-content");
-    let sections = {};
-    let i = 0;
-
-    Array.prototype.forEach.call(section, e => {
-      sections[e.id] = e.offsetTop;
-    });
-
-    window.onscroll = function () {
-      let scrollPostion = document.documentElement.scrollTop || document.body.scrollTop;
-
-      for (i in sections) {
-        if (sections[i] <= scrollPostion) {
-          document.querySelectorAll('.mdc-list a').forEach(ele => {
-            ele.classList.remove('mdc-list-item__actived');
-          });
-          document.querySelector(`a[href='#${i}']`).classList.add('mdc-list-item__actived');
-        }
-      }
-    };
-
-  }
-)();
-document.querySelector('.mdc-list a').classList.add('mdc-list-item__actived');
 //#endregion

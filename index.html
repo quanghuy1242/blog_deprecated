@@ -97,6 +97,17 @@
       </div>
     </div>
     <div class="mdc-layout-grid">
+      <!-- Loading -->
+      <div role="progressbar" class="mdc-linear-progress mdc-linear-progress--indeterminate">
+        <div class="mdc-linear-progress__buffering-dots"></div>
+        <div class="mdc-linear-progress__buffer"></div>
+        <div class="mdc-linear-progress__bar mdc-linear-progress__primary-bar">
+          <span class="mdc-linear-progress__bar-inner"></span>
+        </div>
+        <div class="mdc-linear-progress__bar mdc-linear-progress__secondary-bar">
+          <span class="mdc-linear-progress__bar-inner"></span>
+        </div>
+      </div>
       <div class="mdc-layout-grid__inner">
         <div class="mdc-layout-grid__cell--span-3">
           <ul class="mdc-list" id="cs-list-summary">
@@ -127,11 +138,13 @@
       <div class="footer__inner">
         <h5 class="mdc-typography--button footer__title font-light">Quang Huy</h5>
         <div class="mdc-typography--subtitle2 font-light">2019</div>
+        <a href="admin/admin.html" target="_blank" class="mdc-button cs-white-button">Administration</a>
       </div>
     </div>
   </div>
   <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
-  <script src="javascript/blogs.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script>
+  <script src="javascript/initializeFirebase.js"></script>
   <script src="javascript/loadContent.js"></script>
   <script src="javascript/script.js"></script>
 </body>
