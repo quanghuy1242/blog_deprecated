@@ -69,6 +69,7 @@ let btnUpdate = document.querySelector('#btnEdit');
 let dialog = new MDCDialog(document.querySelector('#aboutDialog'));
 let btnCReload = document.querySelector('#cs-btn-close-dialog');
 dialog.scrimClickAction = '';
+dialog.escapeKeyAction = '';
 
 
 let dialogLoading = new MDCDialog(document.querySelector('#loadingPopUp'));
@@ -156,6 +157,7 @@ firebase.auth().onAuthStateChanged(function (user) {
 });
   
 btnUpdate.addEventListener('click', () => {
+  dialogLoading.open();
   db.collection('blogs')
     .doc(selectedBlog.id)
     .update({
@@ -163,6 +165,7 @@ btnUpdate.addEventListener('click', () => {
       content: titleContent.value
     })
     .then(() => {
+      dialogLoading.close();
       dialog.open();
       btnCReload.addEventListener('click', () => {
         db.collection('blogs')

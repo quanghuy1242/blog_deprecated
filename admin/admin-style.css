@@ -58,15 +58,6 @@
     cursor: pointer;
 }
 
-.mdc-list::-webkit-scrollbar {
-    width: 2px;
-    height: 2px;
-}
-
-.mdc-list::-webkit-scrollbar-thumb {
-    background-color: #3d5b6db7;
-}
-
 .cs-text-field {
     width: 100%;
 }
@@ -83,6 +74,13 @@
 
 .mdc-text-field--textarea textarea {
     resize: none;
+    overflow-y: hidden;
+    padding-right: 16px !important;
+}
+
+.mdc-text-field--textarea textarea:hover {
+    overflow-y: auto;
+    padding-right: 12px !important;
 }
 
 .cs-content-blog {

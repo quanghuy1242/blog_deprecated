@@ -140,13 +140,14 @@ body {
 /* end */
 
 /* Scroller */
-::-webkit-scrollbar-thumb {
-    background-color: #3d5b6db7;
+::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
 }
 
-::-webkit-scrollbar {
-    height: 5px;
-    width: 5px;
+::-webkit-scrollbar-thumb {
+    background-color: rgba(61, 91, 109, 0.616);
+    border-radius: 4px;
 }
 /* end */
 
