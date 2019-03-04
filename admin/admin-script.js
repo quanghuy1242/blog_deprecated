@@ -20,21 +20,19 @@ let btnOpenQH = document.querySelector('#btnOpenQH');
 
 btnOpenQH.addEventListener('click', () => {
   menuQH.open = !menuQH.open;
-  menuQH.listen('MDCMenu:selected', function(e) {
-    let indexClick = e.detail.index;
-    if (indexClick === 0) { // đăng xuất
-      firebase.auth().signOut().then(function() {
-        // Sign-out successful.
-      }).catch(function(error) {
-        // An error happened.
-        console.log('An error happened');
-      });
-    }
-  });
 });
 
-document.querySelector('.mdc-menu li').click();
-
+menuQH.listen('MDCMenu:selected', function(e) {
+  let indexClick = e.detail.index;
+  if (indexClick === 0) { // đăng xuất
+    firebase.auth().signOut().then(function() {
+      // Sign-out successful.
+    }).catch(function(error) {
+      // An error happened.
+      console.log('An error happened');
+    });
+  }
+});
 //#endregion
 
 //#region tabBar
