@@ -91,3 +91,21 @@
     display: flex;
     justify-content: flex-end;
 }
+
+.cs-action button {
+    margin-left: 0.5rem;
+}
+
+#dialogNewPost .mdc-dialog__surface {
+    min-width: 800px;
+}
+
+#cs-new-post-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#dialogNewPost .cs-content-blog {
+    margin-top: 0.7rem;
+}

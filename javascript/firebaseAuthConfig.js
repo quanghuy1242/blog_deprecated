@@ -11,12 +11,9 @@ document.querySelector('#aaaa').addEventListener('click', () => {
       if (user) {
         console.log('Đã đăng nhập');
         window.location.replace('./admin/admin.html');
-      } else {
-        // No user is signed in.
       }
     })
     .catch(function (error) {
-      // Handle Errors here.
       document.querySelector('.mdc-linear-progress').style.opacity = "0";
       disableDiv.style.display = 'none';
       var errorCode = error.code;

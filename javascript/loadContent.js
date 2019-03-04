@@ -1,9 +1,10 @@
 const db = firebase.firestore();
+let getBlogs = [];
 
 const blogContent = document.querySelector('#content-blog');
 const listTitleContent = document.querySelector('#cs-list-summary');
 
-function appendBlog(blog, id, modifyContentBlog, blogMainContent) {
+function appendBlog(blog, blogMainContent) {
   let mdcCard = document.createElement('div');
   mdcCard.className = "mdc-card cs-card";
 
@@ -19,7 +20,7 @@ function appendBlog(blog, id, modifyContentBlog, blogMainContent) {
   cardTitle.appendChild(cardTitletext);
 
   let cardSubTitle = document.createElement('h3');
-  let cardSubTitletext = document.createTextNode(blog.day);
+  let cardSubTitletext = document.createTextNode(blog.day.toDate().toLocaleDateString());
   cardSubTitle.className = "cs-card__subtitle mdc-typography--subtitle2";
   cardSubTitle.appendChild(cardSubTitletext);
 
@@ -27,7 +28,7 @@ function appendBlog(blog, id, modifyContentBlog, blogMainContent) {
 
   let cardContent = document.createElement('div');
   cardContent.className = "cs-card__content mdc-card__actions mdc-typography--body2";
-  cardContent.innerHTML = modifyContentBlog;
+  cardContent.innerHTML = blog.content;
 
   mdcCardInner.appendChild(cardHeader);
   mdcCard.append(mdcCardInner, cardContent);
@@ -35,7 +36,7 @@ function appendBlog(blog, id, modifyContentBlog, blogMainContent) {
   let offsetDiv = document.createElement('div');
   offsetDiv.style.height = '64px';
   offsetDiv.style.marginTop = '-64px';
-  offsetDiv.setAttribute("id", id);
+  offsetDiv.setAttribute("id", blog.id);
   offsetDiv.className = "cs-card-content";
 
   blogMainContent.append(offsetDiv, mdcCard);
@@ -55,6 +56,19 @@ function appendListTitle(title, id, listTitleMainContent) {
   mdcListItem.appendChild(mdcListItemContent);
 
   listTitleMainContent.appendChild(mdcListItem);
+}
+
+function getDSBlogs(blogs) {
+  getBlogs.length = 0;
+  blogs.forEach(blog => {
+    getBlogs.push({ 
+      id: blog.id, 
+      title: blog.data().title,
+      day: blog.data().day,
+      content: blog.data().content.replace(/\n/g, "<div class='cs-ngat-dong'></div>"),
+      isChanged: false 
+    });
+  });
 }
 
 //#region scroll
@@ -82,22 +96,25 @@ function scrollPy () {
 };
 //#endregion
 
+function renderAndInitial(blogs) {
+  getBlogs.forEach((blog) => {
+    appendBlog(blog, blogContent);
+    appendListTitle(blog.title, blog.id, listTitleContent);
+  });
+  document.querySelector('.mdc-list a').classList.add('mdc-list-item__actived'); // active cái đầu tiên
+  // Ripple
+  document.querySelectorAll('.mdc-card__primary-action').forEach(element => {
+    mdc.ripple.MDCRipple.attachTo(element);
+  })
+}
+
 db.collection('blogs')
+  .orderBy("day", "desc")
   .get()
   .then((blogs) => {
-    blogs.forEach((blog) => {
-      let modifyContentBlog = blog.data().content.replace(/\n/g, "<div class='cs-ngat-dong'></div>");
-      appendBlog(blog.data(), blog.id, modifyContentBlog, blogContent);
-      appendListTitle(blog.data().title, blog.id, listTitleContent);
-    }); 
-    document.querySelector('.mdc-list a').classList.add('mdc-list-item__actived'); // active cái đầu tiên
-    // Ripple
-    document.querySelectorAll('.mdc-card__primary-action').forEach(element => {
-      mdc.ripple.MDCRipple.attachTo(element);
-    })
-  })
-  .then(() => {
+    getDSBlogs(blogs);
+    renderAndInitial(getBlogs);
     // Ẩn cái thanh loader
     document.querySelector('.mdc-linear-progress').style.display = "none";
     scrollPy();
-  });
+  })

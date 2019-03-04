@@ -20,6 +20,9 @@
           class="mdc-button mdc-button--unelevated mdc-top-app-bar__title nav-logo mdc-ripple-surface--accent mdc-button--unelevate__hover">
           <span>Administration</span>
         </button>
+        <button class="mdc-button nav-link" style="background-color: #fff;" id="btnNewPost">
+          <span>New post</span>
+        </button>
         <a href="../index.html" target="_blank"
           class="mdc-button mdc-button--unelevated nav-link mdc-ripple-surface--accent mdc-button--unelevate__hover">
           <span>Blogs Page</span>
@@ -126,12 +129,13 @@
                     </div>
                   </div>
                   <div class="cs-action">
+                    <button class="mdc-button" id="btnDelete">Delete</button>
                     <button class="mdc-button mdc-button--raised" id="btnEdit">Update</button>
                   </div>
                 </div>
               </div>
               <div class="tab-content mdc-typography--body1" id="mdc-tab-content-2">
-                This website does not support old browsers and Internet Explorer! Please use another modern browsers and
+                This application does not support old browsers and Internet Explorer! Please use another modern browsers and
                 then try again to gain better performance! Thanks with love!
               </div>
             </div>
@@ -140,12 +144,12 @@
       </div>
     </div>
   </div>
-  <div class="mdc-dialog" id="aboutDialog" role="contentinfo">
+  <div class="mdc-dialog" id="aboutDialog" role="contentinfo" style="z-index: 555551;">
     <div class="mdc-dialog__container">
       <div class="mdc-dialog__surface">
         <h2 class="mdc-dialog__title">Thông báo</h2>
         <div class="mdc-dialog__content">
-          Update thành công!
+          <!-- Update thành công! -->
         </div>
         <footer class="mdc-dialog__actions">
           <button type="button" class="mdc-button mdc-dialog__button" id="cs-btn-close-dialog" data-mdc-dialog-action="no">
@@ -156,7 +160,7 @@
     </div>
     <div class="mdc-dialog__scrim"></div>
   </div>
-  <div class="mdc-dialog" id="loadingPopUp">
+  <div class="mdc-dialog" id="loadingPopUp" style="z-index: 555551;">
     <div class="mdc-dialog__container">
       <div class="mdc-dialog__surface">
         <h2 class="mdc-dialog__title">Loading...</h2>
@@ -177,6 +181,69 @@
               <span class="mdc-button__label">Ok</span>
             </button>
           </footer>
+      </div>
+    </div>
+    <div class="mdc-dialog__scrim"></div>
+  </div>
+  <div class="mdc-dialog" id="dialogNewPost" role="contentinfo">
+    <div class="mdc-dialog__container">
+      <div class="mdc-dialog__surface">
+        <h2 class="mdc-dialog__title">New Post</h2>
+        <div class="mdc-dialog__content" id="cs-new-post-content">
+          <div class="cs-title-blog" style="margin-top: 5px;width: 100%;">
+            <div class="mdc-text-field mdc-text-field--outlined" id="newBlogTitle" style="width: 100%;">
+              <input class="mdc-text-field__input">
+              <div class="mdc-notched-outline">
+                <div class="mdc-notched-outline__leading"></div>
+                <div class="mdc-notched-outline__notch">
+                  <label class="mdc-floating-label">Title</label>
+                </div>
+                <div class="mdc-notched-outline__trailing"></div>
+              </div>
+            </div>
+          </div>
+          <div class="cs-content-blog">
+            <div class="mdc-text-field mdc-text-field--textarea" id="newBlogContent">
+              <textarea class="mdc-text-field__input" rows="8" cols="40"></textarea>
+              <div class="mdc-notched-outline">
+                <div class="mdc-notched-outline__leading"></div>
+                <div class="mdc-notched-outline__notch">
+                  <label for="textarea" class="mdc-floating-label">Content</label>
+                </div>
+                <div class="mdc-notched-outline__trailing"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="mdc-dialog__actions">
+          <button type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="no">
+            <span class="mdc-button__label">Cancel</span>
+          </button>
+          <button type="button" class="mdc-button mdc-dialog__button" id="btnAddPost">
+            <span class="mdc-button__label">Post</span>
+          </button>
+        </footer>
+      </div>
+    </div>
+    <div class="mdc-dialog__scrim"></div>
+  </div>
+  <div class="mdc-dialog" role="alertdialog" aria-modal="true" aria-labelledby="my-dialog-title"
+    aria-describedby="my-dialog-content" id="dialogConfirm">
+    <div class="mdc-dialog__container">
+      <div class="mdc-dialog__surface">
+        <!-- Title cannot contain leading whitespace due to mdc-typography-baseline-top() -->
+        <h2 class="mdc-dialog__title" id="my-dialog-title">Xác nhận</h2>
+        <div class="mdc-dialog__content" id="my-dialog-content">
+          Bạn có chắc chắn?
+        </div>
+        <footer class="mdc-dialog__actions">
+          <button type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="close">
+            <span class="mdc-button__label">Cancel</span>
+          </button>
+          <button type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="accept">
+            <span class="mdc-button__label">OK</span>
+          </button>
+        </footer>
       </div>
     </div>
     <div class="mdc-dialog__scrim"></div>
