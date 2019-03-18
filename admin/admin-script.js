@@ -9,10 +9,21 @@ const MDCRipple = mdc.ripple.MDCRipple;
 const MDCTextField = mdc.textField.MDCTextField;
 const MDCMenu = mdc.menu.MDCMenu;
 const MDCMenuSurface = mdc.menuSurface.MDCMenuSurface;
+const MDCFormField = mdc.formField.MDCFormField;
+const MDCCheckbox = mdc.checkbox.MDCCheckbox
+const md = window.markdownit();
 
 document.querySelectorAll('.mdc-button, .mdc-menu li').forEach(element => {
   mdc.ripple.MDCRipple.attachTo(element);
 })
+
+const checkboxEditMdSp = new MDCCheckbox(document.querySelector('#chkMDSPEdit'));
+const formFieldChkEdit = new MDCFormField(document.querySelector('#formFieldChkEdit'));
+formFieldChkEdit.input = checkboxEditMdSp;
+
+const checkboxNewMdSp = new MDCCheckbox(document.querySelector('#chkMDSPNew'));
+const formFieldChkNew = new MDCFormField(document.querySelector('#formFieldChkNew'));
+formFieldChkNew.input = checkboxNewMdSp;
 
 //#region Menu Quang Huy
 const menuQH = new MDCMenu(document.querySelector('.mdc-menu'));
@@ -89,6 +100,10 @@ dialogNewPost.escapeKeyAction = '';
 let dialogConfirmDelete = new MDCDialog(document.querySelector('#dialogConfirm'));
 dialogConfirmDelete.scrimClickAction = '';
 dialogConfirmDelete.escapeKeyAction = '';
+
+let dialogPreview = new MDCDialog(document.querySelector('#dialogPreview'));
+dialogPreview.scrimClickAction = '';
+dialogPreview.escapeKeyAction = '';
 //#endregion
 
 //#region load danh sách
@@ -134,6 +149,7 @@ function getDSBlogs(blogs) {
       title: blog.data().title,
       day: blog.data().day,
       content: blog.data().content,
+      isRichContent: blog.data().isRichContent,
       isChanged: false 
     });
   });
@@ -157,10 +173,11 @@ function loadList(blogs) {
   getDSBlogs(blogs);
   renderList(getBlogs);
   list.listen('MDCList:action', function (e) {
-    idCLick = e.detail;
+    idCLick = e.detail.index;
     if (!getBlogs[idCLick].isChanged) {
       titleInput.value = getBlogs[idCLick].title;
       titleContent.value = getBlogs[idCLick].content;
+      checkboxEditMdSp.checked = getBlogs[idCLick].isRichContent;
     }
     else {
       dialogLoading.open();
@@ -171,6 +188,7 @@ function loadList(blogs) {
           getDSBlogs(blogss);
           titleInput.value = getBlogs[idCLick].title;
           titleContent.value = getBlogs[idCLick].content;
+          checkboxEditMdSp.checked = getBlogs[idCLick].isRichContent;
           getBlogs[idCLick].isChanged = false;
           dialogLoading.close();
         })
@@ -211,7 +229,8 @@ btnUpdate.addEventListener('click', () => {
     .doc(getBlogs[idCLick].id)
     .update({
       title: titleInput.value,
-      content: titleContent.value
+      content: titleContent.value,
+      isRichContent: checkboxEditMdSp.checked
     })
     .then(() => {
       getBlogs[idCLick].isChanged = true;
@@ -233,6 +252,28 @@ document.querySelector('#btnNewPost').addEventListener('click', () => {
   dialogNewPost.open();
 })
 
+document.querySelector('#btnPreview').addEventListener('click', () => {
+  if (checkboxEditMdSp.checked) {
+    document.querySelector('#contentPreview').innerHTML = md.render(titleContent.value);
+    dialogPreview.open();
+  } else {
+    let contentblog = titleContent.value.replace(/\n/g, "<div class='cs-ngat-dong'></div>");
+    document.querySelector('#contentPreview').innerHTML = contentblog;
+    dialogPreview.open();
+  }
+})
+
+document.querySelector('#btnPreviewNew').addEventListener('click', () => {
+  if (checkboxNewMdSp.checked) {
+    document.querySelector('#contentPreview').innerHTML = md.render(newBlogContent.value);
+    dialogPreview.open();
+  } else {
+    let contentblog = newBlogContent.value.replace(/\n/g, "<div class='cs-ngat-dong'></div>");
+    document.querySelector('#contentPreview').innerHTML = contentblog;
+    dialogPreview.open();
+  }
+})
+
 document.querySelector('#btnAddPost').addEventListener('click', () => {
   if (!newBlogTitle.value || !newBlogContent.value) {
     dialog.content_.innerText = "Không thể bỏ trống trường nào!";
@@ -244,7 +285,8 @@ document.querySelector('#btnAddPost').addEventListener('click', () => {
     .add({
       title: newBlogTitle.value,
       day: new Date(),
-      content: newBlogContent.value
+      content: newBlogContent.value,
+      isRichContent: checkboxNewMdSp.checked
     })
     .then((blogadded) => {
       dialogLoading.close();
