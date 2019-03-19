@@ -101,8 +101,12 @@
 }
 
 #dialogPreview .mdc-dialog__surface {
-  min-width: 800px;
-  height: 90vh;
+  min-width: 1000px;
+  min-height: 90vh;
+}
+
+#contentPreview {
+  color: black;
 }
 
 #cs-new-post-content {

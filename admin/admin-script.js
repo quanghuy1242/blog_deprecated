@@ -11,7 +11,11 @@ const MDCMenu = mdc.menu.MDCMenu;
 const MDCMenuSurface = mdc.menuSurface.MDCMenuSurface;
 const MDCFormField = mdc.formField.MDCFormField;
 const MDCCheckbox = mdc.checkbox.MDCCheckbox
-const md = window.markdownit();
+const md = window.markdownit({
+  html: true,
+  linkify: true,
+  typographer: true,
+});
 
 document.querySelectorAll('.mdc-button, .mdc-menu li').forEach(element => {
   mdc.ripple.MDCRipple.attachTo(element);
@@ -253,6 +257,7 @@ document.querySelector('#btnNewPost').addEventListener('click', () => {
 })
 
 document.querySelector('#btnPreview').addEventListener('click', () => {
+  document.querySelector('#titlePreview').innerText = titleInput.value;
   if (checkboxEditMdSp.checked) {
     document.querySelector('#contentPreview').innerHTML = md.render(titleContent.value);
     dialogPreview.open();
@@ -264,6 +269,7 @@ document.querySelector('#btnPreview').addEventListener('click', () => {
 })
 
 document.querySelector('#btnPreviewNew').addEventListener('click', () => {
+  document.querySelector('#titlePreview').innerText = newBlogTitle.value;
   if (checkboxNewMdSp.checked) {
     document.querySelector('#contentPreview').innerHTML = md.render(newBlogContent.value);
     dialogPreview.open();
